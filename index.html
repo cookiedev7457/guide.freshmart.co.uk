@@ -3,28 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh-Mart | Staff Handbook</title>
+    <title>Fresh-Mart | Group Ranks</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; }
         .sidebar { background-color: #161616; border-right: 1px solid #262626; }
-        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; }
+        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; }
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .sidebar-item.active { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981; }
         .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
-        .breadcrumb-item { color: #9ca3af; font-size: 0.875rem; }
-        .breadcrumb-active { background-color: #262626; color: #10b981; padding: 2px 8px; border-radius: 4px; }
     </style>
 </head>
 <body class="flex h-screen overflow-hidden">
-
     <aside class="w-72 sidebar flex flex-col hidden lg:flex">
-        <div class="p-6 border-b border-gray-800">
-            <h1 class="text-xl font-bold flex items-center gap-2">
-                <i data-lucide="shield-check" class="text-green-500"></i> Fresh-Mart Support
-            </h1>
-        </div>
-        
-        <nav class="flex-1 overflow
+        <div class="p-6 border-b border-gray-800"><h1 class="text-xl font-bold flex items-center gap-2"><i data-lucide="shield-check" class="text-green-500"></i> Fresh-Mart Support</h1></div>
+        <nav class="flex-1 overflow-y-auto py-4">
+            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Staff Info</div>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Promotions</a>
+            <a href="index.html" class="sidebar-item active block px-8 py-2.5 text-sm font-medium">Group Ranks</a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Rules</a>
+        </nav>
+    </aside>
+
+    <main class="flex-1 flex flex-col overflow-y-auto">
+        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f] text-sm gap-3">
+            <i data-lucide="home" class="w-4 h-4 text-gray-400"></i> <span class="text-gray-600">/</span> <span class="text-gray-400">Staff Info</span> <span class="text-gray-600">/</span> <span class="bg-[#262626] text-green-400 px-2 py-1 rounded">Group Ranks</span>
+        </header>
+        <article class="p-8 md:p-16 max-w-5xl mx-auto w-full">
+            <h1 class="text-5xl font-extrabold mb-10 text-white tracking-tight">Group Ranks</h1>
+            <div class="info-alert p-5 rounded-r-md mb-12 flex gap-4">
+                <i data-lucide="info" class="w-6 h-6 text-cyan-400 flex-shrink-0"></i>
+                <div><h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Info</h4><p class="text-gray-300 text-sm">Official hierarchy and rank descriptions.</p></div>
+            </div>
+            <div class="space-y-12">
+                <section><h2 class="text-3xl font-bold text-cyan-400 mb-4">Customer</h2><p class="text-gray-400 ml-2">Regular players and shoppers at the store.</p></section>
+                <section><h2 class="text-3xl font-bold text-pink-500 mb-4">Noted Customer</h2><p class="text-gray-400 ml-2">Recognized contributors and former staff.</p></section>
+            </div>
+        </article>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

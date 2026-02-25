@@ -15,54 +15,134 @@
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
         .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
         .breadcrumb { background-color: #262626; color: #10b981; padding: 2px 8px; border-radius: 4px; font-size: 0.875rem; }
+        
+        /* Rank Color Classes based on your screenshots */
+        .rank-gold { color: #facc15; }
+        .rank-blue { color: #3b82f6; }
+        .rank-red { color: #ef4444; }
+        .rank-purple { color: #a855f7; }
+        .rank-green { color: #10b981; }
+        .rank-pink { color: #ec4899; }
+        .rank-customer { color: #10b981; }
     </style>
 </head>
 <body class="flex min-h-screen">
+
     <aside class="sidebar flex flex-col hidden lg:flex">
-        <div class="p-6 border-b border-gray-800">
-            <h1 class="text-xl font-bold flex items-center gap-2"><i data-lucide="shield-check" class="text-green-500"></i> Fresh-Mart Support</h1>
+        <div class="p-6 border-b border-gray-800 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-green-500"></i>
+            <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
         </div>
         <nav class="flex-1 overflow-y-auto py-4">
             <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
-            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Welcome</a>
+            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
+            </a>
+            
             <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">Staff Info</div>
-            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Promotions</a>
-            <a href="ranks.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">Group Ranks</a>
-            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Rules</a>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
+            </a>
+            <a href="ranks.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
+            </a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
+            </a>
         </nav>
     </aside>
+
     <main class="flex-1 flex flex-col">
         <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0 z-10">
             <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Staff Info</span> <span>/</span> <span class="breadcrumb">Group Ranks</span>
+                <i data-lucide="home" class="w-4 h-4"></i> 
+                <span>/</span> <span>Staff Info</span> <span>/</span> 
+                <span class="breadcrumb">Group Ranks</span>
             </div>
         </header>
+
         <article class="p-8 md:p-16 max-w-5xl w-full">
             <h1 class="text-5xl font-extrabold mb-10 text-white tracking-tight">Rank Structure</h1>
+            
             <div class="info-alert p-5 rounded-r-md mb-12 flex gap-4">
-                <i data-lucide="info" class="w-6 h-6 text-cyan-400 flex-shrink-0"></i>
+                <i data-lucide="arrow-down-up" class="w-6 h-6 text-cyan-400 flex-shrink-0"></i>
                 <div>
-                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Info</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">Here, staff members can find a comprehensive list of Fresh-Mart's ranks and their descriptions.</p>
+                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Hierarchy</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Ranks are listed from entry-level customers to the executive ownership team.</p>
                 </div>
             </div>
-            <div class="space-y-12">
+
+            <div class="space-y-16">
+
                 <section>
-                    <h2 class="text-3xl font-bold text-cyan-400 mb-4">Customer</h2>
-                    <ul class="list-disc ml-6 space-y-2 text-gray-400">
-                        <li>Holds the lowest rank within the group.</li>
-                        <li>Regular players who shop and request items.</li>
-                    </ul>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Public Ranks</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <h3 class="text-lg font-medium rank-customer">Valued Customer</h3>
+                        <h3 class="text-lg font-medium rank-pink">Noted Customer</h3>
+                        <h3 class="text-lg font-medium text-gray-400">Awaiting Training</h3>
+                    </div>
                 </section>
+
                 <section>
-                    <h2 class="text-3xl font-bold text-pink-500 mb-4">Noted Customer</h2>
-                    <ul class="list-disc ml-6 space-y-2 text-gray-400">
-                        <li>Individuals who have made noteworthy contributions to the group.</li>
-                    </ul>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Lower Ranks (LR)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <h3 class="text-md font-medium rank-gold">Junior Store College</h3>
+                        <h3 class="text-md font-medium rank-gold">Junior Security</h3>
+                        <h3 class="text-md font-medium rank-gold">Store College</h3>
+                        <h3 class="text-md font-medium rank-gold">Security College</h3>
+                        <h3 class="text-md font-medium rank-gold">Senior Store College</h3>
+                        <h3 class="text-md font-medium rank-gold">Senior Security</h3>
+                        <h3 class="text-md font-medium rank-gold">Department Supervisor</h3>
+                        <h3 class="text-md font-medium rank-gold">Security Supervisor</h3>
+                    </div>
                 </section>
+
+                <section>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">High Ranks (HR)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <h3 class="text-md font-medium rank-blue">Department Manager</h3>
+                        <h3 class="text-md font-medium rank-blue">Junior Lead Security</h3>
+                        <h3 class="text-md font-medium rank-blue">Assistant Store Manager</h3>
+                        <h3 class="text-md font-medium rank-blue">Lead Security</h3>
+                        <h3 class="text-md font-medium rank-blue">Store Manager</h3>
+                        <h3 class="text-md font-medium rank-blue">Team Leader</h3>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Administration</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <h3 class="text-lg font-semibold rank-red">Senior Lead Security</h3>
+                        <h3 class="text-lg font-semibold rank-red">Senior Team Leader</h3>
+                        <h3 class="text-lg font-semibold rank-red">Executive Store Manager</h3>
+                    </div>
+                </section>
+
+                <section>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Executive Leadership</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold rank-green">Site & Engineer Crew</h3>
+                        </div>
+                        <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold rank-green">Site Administration</h3>
+                        </div>
+                        <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold rank-green">Board of Directors</h3>
+                        </div>
+                        <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold rank-purple">Vice-Chairman</h3>
+                        </div>
+                        <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
+                            <h3 class="text-xl font-bold rank-purple">Group Chairman</h3>
+                        </div>
+                    </div>
+                </section>
+
             </div>
         </article>
     </main>
+
     <script>lucide.createIcons();</script>
 </body>
 </html>

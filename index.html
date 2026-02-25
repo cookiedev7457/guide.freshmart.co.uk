@@ -14,40 +14,50 @@
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
         .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
-        .breadcrumb { background-color: #262626; color: #10b981; padding: 2px 8px; border-radius: 4px; font-size: 0.875rem; }
     </style>
 </head>
 <body class="flex min-h-screen">
     <aside class="sidebar flex flex-col hidden lg:flex">
-        <div class="p-6 border-b border-gray-800">
-            <h1 class="text-xl font-bold flex items-center gap-2"><i data-lucide="shield-check" class="text-green-500"></i> Fresh-Mart Support</h1>
+        <div class="p-6 border-b border-gray-800 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-green-500"></i>
+            <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
         </div>
         <nav class="flex-1 overflow-y-auto py-4">
             <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
-            <a href="index.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">Welcome</a>
+            <a href="index.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
+            </a>
             <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">Staff Info</div>
-            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Promotions</a>
-            <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Group Ranks</a>
-            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Rules</a>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
+            </a>
+            <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
+            </a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
+            </a>
         </nav>
     </aside>
-    <main class="flex-1 flex flex-col">
-        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0 z-10">
+
+    <main class="flex-1">
+        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f]">
             <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="breadcrumb">Welcome</span>
+                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="text-green-500">Welcome</span>
             </div>
         </header>
-        <article class="p-8 md:p-16 max-w-5xl w-full">
-            <h1 class="text-5xl font-extrabold mb-10 text-white tracking-tight">Welcome</h1>
-            <div class="info-alert p-5 rounded-r-md mb-12 flex gap-4">
-                <i data-lucide="info" class="w-6 h-6 text-cyan-400 flex-shrink-0"></i>
+        <article class="p-8 md:p-16 max-w-4xl">
+            <h1 class="text-5xl font-extrabold mb-10 text-white">Welcome</h1>
+            <div class="info-alert p-5 rounded-r-md flex gap-4">
+                <i data-lucide="info" class="w-6 h-6 text-cyan-400"></i>
                 <div>
                     <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Getting Started</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">Welcome to the official Fresh-Mart staff handbook. This site contains all necessary information regarding our operations. Notice any incorrect information? Contact Cookie.dev7457.</p>
+                    <p class="text-gray-300 text-sm">Welcome to the official Fresh-Mart staff handbook. This site contains all necessary information regarding our operations.</p>
                 </div>
             </div>
         </article>
     </main>
+
     <script>lucide.createIcons();</script>
 </body>
 </html>

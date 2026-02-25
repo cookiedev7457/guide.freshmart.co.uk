@@ -1,93 +1,99 @@
-<script src="https://unpkg.com/lucide@latest"></script>
-
-<div class="space-y-16">
-    <section>
-        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Public Ranks</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div>
-                <h3 class="text-lg font-medium rank-customer">Valued Customer</h3>
-                <p class="text-gray-500 text-xs mt-1">Standard group member and shopper at Fresh-Mart.</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-medium rank-pink">Noted Customer</h3>
-                <p class="text-gray-500 text-xs mt-1">Recognized individuals or former staff members.</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-medium rank-orange">Awaiting Training</h3>
-                <p class="text-gray-500 text-xs mt-1">New recruits ready to attend their first training session.</p>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh-Mart | Group Ranks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; }
+        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
+        .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
+        /* Rank Colors */
+        .rank-gold { color: #facc15; } .rank-blue { color: #3b82f6; } .rank-red { color: #ef4444; }
+        .rank-purple { color: #a855f7; } .rank-green { color: #10b981; } .rank-orange { color: #f97316; }
+        .rank-pink { color: #ec4899; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+    <aside class="sidebar flex flex-col">
+        <div class="p-6 border-b border-gray-800 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-green-500"></i>
+            <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
         </div>
-    </section>
+        <nav class="flex-1 py-4">
+            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
+            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">Staff Info</div>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
+            </a>
+            <a href="ranks.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
+            </a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
+            </a>
+        </nav>
+    </aside>
 
-    <section>
-        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Lower Ranks (LR)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div>
-                <h3 class="text-md font-medium rank-gold">Junior Store/Security</h3>
-                <p class="text-gray-500 text-xs mt-1">Entry-level staff learning the basics of their department.</p>
+    <main class="flex-1 overflow-y-auto">
+        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0">
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+                <i data-lucide="users" class="w-4 h-4"></i> <span>/</span> <span>Staff Info</span> <span>/</span> <span class="text-green-500">Group Ranks</span>
             </div>
-            <div>
-                <h3 class="text-md font-medium rank-gold">Store/Security College</h3>
-                <p class="text-gray-500 text-xs mt-1">Intermediate staff who have completed initial orientation.</p>
-            </div>
-            <div>
-                <h3 class="text-md font-medium rank-gold">Senior Store/Security</h3>
-                <p class="text-gray-500 text-xs mt-1">Experienced staff capable of working without constant supervision.</p>
-            </div>
-            <div>
-                <h3 class="text-md font-medium rank-gold">Department/Security Supervisor</h3>
-                <p class="text-gray-500 text-xs mt-1">Highest LR rank; helps guide new recruits on the shop floor.</p>
-            </div>
-        </div>
-    </section>
+        </header>
+        <article class="p-8 md:p-16 max-w-6xl">
+            <h1 class="text-5xl font-extrabold mb-10 text-white">Rank Structure</h1>
+            
+            <div class="space-y-12">
+                <section>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Public Ranks</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div>
+                            <h3 class="text-lg font-bold rank-green">Valued Customer</h3>
+                            <p class="text-gray-400 text-sm mt-1">Standard group member and shopper at Fresh-Mart.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold rank-pink">Noted Customer</h3>
+                            <p class="text-gray-400 text-sm mt-1">Recognized individuals or former staff members.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold rank-orange">Awaiting Training</h3>
+                            <p class="text-gray-400 text-sm mt-1">New recruits ready to attend their first training session.</p>
+                        </div>
+                    </div>
+                </section>
 
-    <section>
-        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">High Ranks (HR)</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div>
-                <h3 class="text-md font-medium rank-blue">Department Manager</h3>
-                <p class="text-gray-400 text-xs mt-1">Oversees specific store areas and manages LR schedules.</p>
+                <section>
+                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Lower Ranks (LR)</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="font-bold rank-gold">Junior Store/Security</h3>
+                            <p class="text-gray-400 text-xs mt-1">Entry-level staff learning the basics of their department.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold rank-gold">Store/Security College</h3>
+                            <p class="text-gray-400 text-xs mt-1">Intermediate staff who have completed orientation.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold rank-gold">Senior Store/Security</h3>
+                            <p class="text-gray-400 text-xs mt-1">Experienced staff capable of working without constant supervision.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold rank-gold">Department Supervisor</h3>
+                            <p class="text-gray-400 text-xs mt-1">Highest LR rank; helps guide new recruits on the floor.</p>
+                        </div>
+                    </div>
+                </section>
             </div>
-            <div>
-                <h3 class="text-md font-medium rank-blue">Assistant Store Manager</h3>
-                <p class="text-gray-400 text-xs mt-1">Supports the Store Manager in daily operations and discipline.</p>
-            </div>
-            <div>
-                <h3 class="text-md font-medium rank-blue">Team Leader</h3>
-                <p class="text-gray-400 text-xs mt-1">Authorized to host training sessions and manage store incidents.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Administration</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div>
-                <h3 class="text-lg font-semibold rank-red">Senior Team Leader</h3>
-                <p class="text-gray-400 text-xs mt-1">Senior officials who manage the HR team and store policy.</p>
-            </div>
-            <div>
-                <h3 class="text-lg font-semibold rank-red">Executive Store Manager</h3>
-                <p class="text-gray-400 text-xs mt-1">Top-tier management responsible for all personnel and staff logs.</p>
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <h2 class="text-xs font-bold text-gray-500 uppercase tracking-[0.2em] mb-6 border-b border-gray-800 pb-2">Executive Leadership</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
-                <h3 class="text-xl font-bold rank-green">Board of Directors</h3>
-                <p class="text-gray-400 text-xs mt-1">Oversees group-wide operations and corporate strategy.</p>
-            </div>
-            <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg">
-                <h3 class="text-xl font-bold rank-purple">Chairman / Vice-Chairman</h3>
-                <p class="text-gray-400 text-xs mt-1">The final authority and owners of the Fresh-Mart brand.</p>
-            </div>
-        </div>
-    </section>
-</div>
-
-<script>
-    lucide.createIcons();
-</script>
+        </article>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

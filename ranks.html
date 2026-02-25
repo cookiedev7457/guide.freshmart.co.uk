@@ -16,7 +16,8 @@
         .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
         .breadcrumb { background-color: #262626; color: #10b981; padding: 2px 8px; border-radius: 4px; font-size: 0.875rem; }
         
-        /* Rank Color Classes based on your screenshots */
+        /* Rank Colors based on your screenshots */
+        .rank-orange { color: #f97316; } /* Orange for Awaiting Training */
         .rank-gold { color: #facc15; }
         .rank-blue { color: #3b82f6; }
         .rank-red { color: #ef4444; }
@@ -65,10 +66,10 @@
             <h1 class="text-5xl font-extrabold mb-10 text-white tracking-tight">Rank Structure</h1>
             
             <div class="info-alert p-5 rounded-r-md mb-12 flex gap-4">
-                <i data-lucide="arrow-down-up" class="w-6 h-6 text-cyan-400 flex-shrink-0"></i>
+                <i data-lucide="arrow-up-narrow-wide" class="w-6 h-6 text-cyan-400 flex-shrink-0"></i>
                 <div>
-                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Hierarchy</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">Ranks are listed from entry-level customers to the executive ownership team.</p>
+                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Hierarchy Order</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Ranks are listed from lowest (top) to highest (bottom).</p>
                 </div>
             </div>
 
@@ -79,7 +80,7 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <h3 class="text-lg font-medium rank-customer">Valued Customer</h3>
                         <h3 class="text-lg font-medium rank-pink">Noted Customer</h3>
-                        <h3 class="text-lg font-medium text-gray-400">Awaiting Training</h3>
+                        <h3 class="text-lg font-medium rank-orange">Awaiting Training</h3>
                     </div>
                 </section>
 

@@ -8,15 +8,16 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; }
-        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; flex-shrink: 0; }
-        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; flex-shrink: 0; height: 100vh; position: sticky; top: 0; }
+        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
-        .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981; }
+        .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
         .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
+        .breadcrumb { background-color: #262626; color: #10b981; padding: 2px 8px; border-radius: 4px; font-size: 0.875rem; }
     </style>
 </head>
-<body class="flex h-screen overflow-hidden">
+<body class="flex min-h-screen">
     <aside class="sidebar flex flex-col hidden lg:flex">
         <div class="p-6 border-b border-gray-800">
             <h1 class="text-xl font-bold flex items-center gap-2"><i data-lucide="shield-check" class="text-green-500"></i> Fresh-Mart Support</h1>
@@ -30,10 +31,10 @@
             <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Rules</a>
         </nav>
     </aside>
-    <main class="flex-1 flex flex-col overflow-y-auto">
-        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f]">
+    <main class="flex-1 flex flex-col">
+        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0 z-10">
             <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="home" class="w-4 h-4"></i> / Introduction / <span class="bg-[#262626] text-green-400 px-2 py-1 rounded">Welcome</span>
+                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="breadcrumb">Welcome</span>
             </div>
         </header>
         <article class="p-8 md:p-16 max-w-5xl w-full">
@@ -45,7 +46,6 @@
                     <p class="text-gray-300 text-sm leading-relaxed">Welcome to the official Fresh-Mart staff handbook. This site contains all necessary information regarding our operations.</p>
                 </div>
             </div>
-            <p class="text-gray-400 text-lg leading-relaxed">Please navigate through the sidebar to find information on ranks, promotions, and our code of conduct.</p>
         </article>
     </main>
     <script>lucide.createIcons();</script>

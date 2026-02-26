@@ -8,21 +8,24 @@
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; overflow-x: hidden; }
         .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
         
-        .rank-card { background-color: #161616; border: 1px solid #262626; transition: all 0.2s; height: 100%; }
-        .rank-card:hover { border-color: #10b981; transform: translateY(-2px); }
+        .rank-card { background-color: #161616; border: 1px solid #262626; transition: all 0.2s; cursor: pointer; }
+        .rank-card:hover { border-color: #10b981; transform: translateY(-2px); background-color: #1a1a1a; }
 
-        /* Tier Colors */
+        /* Modal Styles */
+        #rankModal { transition: opacity 0.3s ease, visibility 0.3s; }
+        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
+        #rankModal.active .modal-content { transform: scale(1); }
+
         .text-lr { color: #facc15; }
         .text-mr { color: #10b981; }
         .text-hr { color: #3b82f6; }
         .text-exec { color: #a855f7; }
-        .text-public { color: #94a3b8; }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -75,108 +78,73 @@
         </header>
 
         <article class="p-8 md:p-16 max-w-6xl">
-            <h1 class="text-5xl font-extrabold mb-12 text-white">Full Rank Hierarchy</h1>
+            <h1 class="text-5xl font-extrabold mb-4 text-white">Rank Hierarchy</h1>
+            <p class="text-gray-400 mb-12 italic text-sm">Click any rank to view promotion eligibility.</p>
 
             <section class="mb-16">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Public Tiers</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="rank-card p-6 rounded-lg">
-                        <h3 class="font-bold text-public">Valued Customer</h3>
-                        <p class="text-gray-400 text-xs mt-2">Standard group member and shopper.</p>
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Management & Executive</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="rank-card p-6 rounded-lg" onclick="openModal('Group Chairman', 'Owner', 'N/A', 'The founder and ultimate authority of Fresh-Mart.')">
+                        <h3 class="font-bold text-exec text-xl">Group Chairman</h3>
+                        <p class="text-gray-500 text-xs mt-1 text-exec font-medium uppercase tracking-tighter">Ownership Tier</p>
                     </div>
-                    <div class="rank-card p-6 rounded-lg">
-                        <h3 class="font-bold text-pink-500">Noted Customer</h3>
-                        <p class="text-gray-400 text-xs mt-2">Recognized former staff or contributors.</p>
-                    </div>
-                    <div class="rank-card p-6 rounded-lg">
-                        <h3 class="font-bold text-orange-500">Awaiting Training</h3>
-                        <p class="text-gray-400 text-xs mt-2">Newly joined members ready to begin staff training.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-16">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Lower Ranks (LR)</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold text-lr">Junior Store College</h4>
-                        <p class="text-[10px] text-gray-500 mt-1">Entry-level trainee for store operations.</p>
-                    </div>
-                    <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold text-lr">Junior Security</h4>
-                        <p class="text-[10px] text-gray-500 mt-1">Entry-level trainee for security operations.</p>
-                    </div>
-                    <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold text-lr">Store College</h4>
-                        <p class="text-[10px] text-gray-500 mt-1">Passed basic training; working on the floor.</p>
-                    </div>
-                    <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold text-lr">Security College</h4>
-                        <p class="text-[10px] text-gray-500 mt-1">Passed basic training; patrolling the store.</p>
-                    </div>
-                    <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold text-lr">Senior Store College</h4>
-                        <p class="text-[10px] text-gray-500 mt-1">Experienced retail staff member.</p>
-                    </div>
-                    <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold text-lr">Senior Security</h4>
-                        <p class="text-[10px] text-gray-500 mt-1">Experienced safety staff member.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-16">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Middle Ranks (MR)</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="rank-card p-6 rounded-lg">
-                        <h3 class="font-bold text-mr">Department Supervisor</h3>
-                        <p class="text-gray-400 text-sm mt-2">Oversees daily LR operations and helps with trainings.</p>
-                    </div>
-                    <div class="rank-card p-6 rounded-lg">
-                        <h3 class="font-bold text-mr">Assistant Store Manager</h3>
-                        <p class="text-gray-400 text-sm mt-2">Management support and trainee evaluation.</p>
-                    </div>
-                    <div class="rank-card p-6 rounded-lg">
-                        <h3 class="font-bold text-mr">Store Manager</h3>
-                        <p class="text-gray-400 text-sm mt-2">Leads the MR team and hosts official sessions.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-16">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">High Ranks (HR)</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="rank-card p-6 rounded-lg border-t-2 border-t-blue-500">
-                        <h3 class="font-bold text-hr">Executive Store Manager</h3>
-                        <p class="text-gray-400 text-sm mt-2">Handles staff complaints and group efficiency.</p>
-                    </div>
-                    <div class="rank-card p-6 rounded-lg border-t-2 border-t-blue-500">
-                        <h3 class="font-bold text-hr">Chief Operations Officer</h3>
-                        <p class="text-gray-400 text-sm mt-2">Directly manages all MR/HR performance.</p>
-                    </div>
-                    <div class="rank-card p-6 rounded-lg border-t-2 border-t-blue-500">
-                        <h3 class="font-bold text-hr">Employment Director</h3>
-                        <p class="text-gray-400 text-sm mt-2">In charge of promotions and blacklist management.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section class="mb-16">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Executive Leadership</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="rank-card p-8 rounded-xl border border-purple-500/30">
-                        <h3 class="text-2xl font-bold text-exec">Vice-Chairman</h3>
-                        <p class="text-gray-400 mt-2">Second-in-command. Oversees all group departments.</p>
-                    </div>
-                    <div class="rank-card p-8 rounded-xl border border-purple-500/30">
-                        <h3 class="text-2xl font-bold text-exec">Group Chairman</h3>
-                        <p class="text-gray-400 mt-2">Founder and Owner of Fresh-Mart.</p>
+                    <div class="rank-card p-6 rounded-lg" onclick="openModal('Store Manager', 'MR', 'Pass Supervisor / High Activity', 'Oversees store operations and hosts training sessions.')">
+                        <h3 class="font-bold text-mr text-xl">Store Manager</h3>
+                        <p class="text-gray-500 text-xs mt-1 text-mr font-medium uppercase tracking-tighter">Management Tier</p>
                     </div>
                 </div>
             </section>
         </article>
     </main>
 
-    <script>lucide.createIcons();</script>
+    <div id="rankModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] invisible opacity-0 flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="modal-content bg-[#161616] border border-gray-800 w-full max-w-md rounded-2xl p-8 shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 id="modalTitle" class="text-3xl font-bold text-white">Rank Name</h2>
+                    <p id="modalTier" class="text-green-500 text-xs font-bold uppercase tracking-widest mt-1">Tier Name</p>
+                </div>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-white transition-colors">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h4 class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Description</h4>
+                    <p id="modalDesc" class="text-gray-300 text-sm leading-relaxed">Description goes here.</p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border border-gray-800">
+                    <h4 class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">How to reach this rank</h4>
+                    <p id="modalReq" class="text-white font-medium">Requirement details.</p>
+                </div>
+            </div>
+            
+            <button onclick="closeModal()" class="w-full mt-8 bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-xl font-bold transition-all">Close Guide</button>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function openModal(title, tier, req, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalTier').innerText = tier;
+            document.getElementById('modalReq').innerText = req;
+            document.getElementById('modalDesc').innerText = desc;
+            
+            const modal = document.getElementById('rankModal');
+            modal.classList.remove('invisible');
+            modal.classList.add('active', 'opacity-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('rankModal');
+            modal.classList.remove('active', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('invisible');
+            }, 300);
+        }
+    </script>
 </body>
 </html>

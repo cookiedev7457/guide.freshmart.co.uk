@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh-Mart | General Info</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
+        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
+        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
+        .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
+        .hr-card { background-color: #161616; border: 1px solid #262626; transition: border-color 0.3s; }
+        .hr-card:hover { border-color: #3b82f6; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+
+    <aside class="sidebar flex flex-col">
+        <div class="p-6 border-b border-gray-800 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-green-500"></i>
+            <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
+        </div>
+        <nav class="flex-1 py-4 overflow-y-auto">
+            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
+            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
+            </a>
+            
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">LR Info</div>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
+            </a>
+            <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
+            </a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
+            </a>
+
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">MR Info</div>
+            <a href="training.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-4 h-4"></i> Training Guide</div>
+            </a>
+
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">HR Info</div>
+            <a href="general.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="info" class="w-4 h-4"></i> General Information</div>
+            </a>
+            <a href="activity.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="calendar" class="w-4 h-4"></i> Activity Information</div>
+            </a>
+            <a href="punishments.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="alert-circle" class="w-4 h-4"></i> Punishment Information</div>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1">
+        <header class="h-16 flex items-center justify-between px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0 z-50">
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+                <i data-lucide="info" class="w-4 h-4"></i> <span>/</span> <span>HR Info</span> <span>/</span> <span class="text-green-500">General Information</span>
+            </div>
+            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium transition-all text-sm">
+                <i data-lucide="log-in" class="w-4 h-4"></i> Login with Roblox
+            </button>
+        </header>
+
+        <article class="p-8 md:p-16 max-w-5xl">
+            <h1 class="text-5xl font-extrabold mb-6 text-white">General HR Information</h1>
+            <p class="text-gray-400 text-lg mb-12 leading-relaxed">
+                As a High Rank (HR) at Fresh-Mart, you represent the highest level of professionalism. You are responsible for the oversight of Middle Ranks (MR) and Lower Ranks (LR), ensuring the store operates smoothly and rules are enforced fairly.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="hr-card p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="briefcase" class="text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Professionalism</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        HRs must maintain perfect grammar and a neutral tone at all times. Personal bias or "friendship favoritism" when promoting or punishing is strictly prohibited and results in a demotion.
+                    </p>
+                </div>
+
+                <div class="hr-card p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="message-square" class="text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Staff Management</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        You are expected to monitor the Training Center and the Store. If an MR is struggling with a session, it is your duty to step in and provide guidance without being condescending.
+                    </p>
+                </div>
+
+                <div class="hr-card p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="shield-alert" class="text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Confidentiality</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Anything discussed in HR-only channels or meetings is strictly confidential. Leaking HR information to LRs or MRs is considered a betrayl of trust and will lead to a permanent blacklist.
+                    </p>
+                </div>
+
+                <div class="hr-card p-6 rounded-lg">
+                    <div class="flex items-center gap-3 mb-4">
+                        <i data-lucide="command" class="text-blue-500"></i>
+                        <h3 class="text-xl font-bold text-white">Command Usage</h3>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Admin commands should only be used for moderation purposes (kick, ban, warn). Using "fun" commands (fly, speed, etc.) on yourself or others in public servers is forbidden.
+                    </p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

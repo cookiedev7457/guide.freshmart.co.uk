@@ -14,15 +14,13 @@
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
 
-        /* Custom Danger Alert Styling to match your screenshot */
+        /* Custom Danger Alert Styling */
         .danger-alert {
-            background-color: rgba(220, 38, 38, 0.05); /* Very subtle red tint */
-            border-radius: 0 0.375rem 0.375rem 0; /* Rounded corners on the right */
+            background-color: rgba(220, 38, 38, 0.05);
+            border-radius: 0 0.375rem 0.375rem 0;
             position: relative;
             overflow: hidden;
         }
-        
-        /* The solid red bar on the left */
         .danger-alert::before {
             content: '';
             position: absolute;
@@ -30,8 +28,17 @@
             top: 0;
             bottom: 0;
             width: 4px;
-            background-color: #dc2626; /* Strict red color */
+            background-color: #dc2626;
         }
+
+        /* Modal Styles */
+        #rankModal { transition: opacity 0.3s ease, visibility 0.3s; }
+        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
+        #rankModal.active .modal-content { transform: scale(1); }
+
+        /* Card Hover Effect */
+        .responsibility-card { transition: all 0.2s; cursor: pointer; }
+        .responsibility-card:hover { border-color: #10b981; transform: translateY(-2px); background-color: #1a1a1a; }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -97,9 +104,10 @@
 
             <div class="space-y-6 text-lg text-gray-300 leading-relaxed mb-12">
                 <p>Welcome to Fresh-Mart's Training Guide. Here you can find all needed information to host or train at any training. Please only Host/Co-Host trainings you have claimed unless stated otherwise by a Group Administrator+.</p>
-                <p> </p>
             </div>
-            <div class="bg-[#161616] p-8 rounded-lg border border-gray-800">
+
+            <div class="responsibility-card bg-[#161616] p-8 rounded-lg border border-gray-800 mb-6" 
+                 onclick="openModal('Host', 'Eligibility', 'Corporate Assistant +', 'The Host is the primary authority of the session, responsible for directing trainers and overseeing the script.')">
                 <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2">
                     <i data-lucide="clipboard-list" class="text-green-500 w-5 h-5"></i>
                     Host Responsibilities
@@ -111,7 +119,9 @@
                     <li>Utilize the most updated version of the script found on this page.</li>
                 </ul>
             </div>
-                        <div class="bg-[#161616] p-8 rounded-lg border border-gray-800">
+
+            <div class="responsibility-card bg-[#161616] p-8 rounded-lg border border-gray-800" 
+                 onclick="openModal('Co-Host', 'Eligibility', 'Staff Supervisor +', 'The Co-Host assists the Host in session management and handles group shouts/announcements.')">
                 <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2">
                     <i data-lucide="clipboard-list" class="text-green-500 w-5 h-5"></i>
                     Co-Host Responsibilities
@@ -120,11 +130,58 @@
                     <li>Arrive at the training centre between XX:35 and XX:40</li>
                     <li>Post the correct format in the group shout at XX:45</li>
                     <li>Maintain a professional demeanor throughout the session.</li>
-                    <li>Utilize the most updated version of the script found on this page if the Host is unavailable/unable to do so.</li>
+                    <li>Utilize the most updated version of the script if the Host is unavailable.</li>
                 </ul>
             </div>
         </article>
     </main>
-    <script>lucide.createIcons();</script>
+
+    <div id="rankModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] invisible opacity-0 flex items-center justify-center p-4" onclick="closeModal()">
+        <div class="modal-content bg-[#161616] border border-gray-800 w-full max-w-md rounded-2xl p-8 shadow-2xl" onclick="event.stopPropagation()">
+            <div class="flex justify-between items-start mb-6">
+                <div>
+                    <h2 id="modalTitle" class="text-3xl font-bold text-white">Rank Name</h2>
+                    <p id="modalTier" class="text-green-500 text-xs font-bold uppercase tracking-widest mt-1">Tier Name</p>
+                </div>
+                <button onclick="closeModal()" class="text-gray-500 hover:text-white transition-colors">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            
+            <div class="space-y-6">
+                <div>
+                    <h4 class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Description</h4>
+                    <p id="modalDesc" class="text-gray-300 text-sm leading-relaxed">Description goes here.</p>
+                </div>
+                <div class="bg-black/30 p-4 rounded-lg border border-gray-800">
+                </div>
+            </div>
+            
+            <button onclick="closeModal()" class="w-full mt-8 bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-xl font-bold transition-all">Close Guide</button>
+        </div>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        function openModal(title, tier, req, desc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalTier').innerText = tier;
+            document.getElementById('modalReq').innerText = req;
+            document.getElementById('modalDesc').innerText = desc;
+            
+            const modal = document.getElementById('rankModal');
+            modal.classList.remove('invisible');
+            modal.classList.add('active', 'opacity-100');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('rankModal');
+            modal.classList.remove('active', 'opacity-100');
+            setTimeout(() => {
+                modal.classList.add('invisible');
+            }, 300);
+        }
+    </script>
 </body>
 </html>

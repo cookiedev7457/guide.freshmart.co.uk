@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresh-Mart | Activity Info</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
+        .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
+        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
+        .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
+        .activity-card { background: linear-gradient(145deg, #1a1a1a, #161616); border: 1px solid #262626; }
+    </style>
+</head>
+<body class="flex min-h-screen">
+    <aside class="sidebar flex flex-col">
+        <div class="p-6 border-b border-gray-800 flex items-center gap-2">
+            <i data-lucide="shield-check" class="text-green-500"></i>
+            <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
+        </div>
+        <nav class="flex-1 py-4 overflow-y-auto">
+            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
+            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">LR Info</div>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
+            </a>
+            <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
+            </a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">MR Info</div>
+            <a href="training.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-4 h-4"></i> Training Guide</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">HR Info</div>
+            <a href="general.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="info" class="w-4 h-4"></i> General Information</div>
+            </a>
+            <a href="activity.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="calendar" class="w-4 h-4"></i> Activity Information</div>
+            </a>
+            <a href="punishments.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="alert-circle" class="w-4 h-4"></i> Punishment Information</div>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="flex-1">
+        <header class="h-16 flex items-center justify-between px-8 border-b border-gray-800 bg-[#0f0f0f]">
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+                <i data-lucide="calendar" class="w-4 h-4"></i> <span>/</span> <span>HR Info</span> <span>/</span> <span class="text-green-500">Activity Information</span>
+            </div>
+            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium text-sm transition-all">
+                <i data-lucide="log-in" class="w-4 h-4"></i> Login with Roblox
+            </button>
+        </header>
+
+        <article class="p-8 md:p-16 max-w-5xl">
+            <h1 class="text-5xl font-extrabold mb-10 text-white">Activity Requirements</h1>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                <div class="activity-card p-8 rounded-xl border-l-4 border-l-green-500">
+                    <h3 class="text-green-500 font-bold uppercase text-xs tracking-widest">Weekly Quota</h3>
+                    <p class="text-4xl font-black text-white mt-2">10 Hours</p>
+                    <p class="text-gray-500 mt-2 text-sm italic">Applies to all High Ranks (HR+)</p>
+                </div>
+                <div class="activity-card p-8 rounded-xl border-l-4 border-l-blue-500">
+                    <h3 class="text-blue-500 font-bold uppercase text-xs tracking-widest">Training Sessions</h3>
+                    <p class="text-4xl font-black text-white mt-2">3 Minimum</p>
+                    <p class="text-gray-500 mt-2 text-sm italic">Must host or co-host per week</p>
+                </div>
+            </div>
+
+            <section class="space-y-6">
+                <h2 class="text-2xl font-bold text-white">Inactivity Notices (LOA)</h2>
+                <div class="bg-[#161616] border border-gray-800 p-6 rounded-lg flex gap-4">
+                    <i data-lucide="clock" class="text-yellow-500 w-6 h-6"></i>
+                    <div>
+                        <p class="text-gray-300">If you cannot meet your quota, you must submit a **Leave of Absence (LOA)** in the designated Discord channel at least 24 hours in advance.</p>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+    <script>lucide.createIcons();</script>
+</body>
+</html>

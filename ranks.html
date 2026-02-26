@@ -14,14 +14,15 @@
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
         
-        .rank-card { background-color: #161616; border: 1px solid #262626; transition: all 0.2s; }
+        .rank-card { background-color: #161616; border: 1px solid #262626; transition: all 0.2s; height: 100%; }
         .rank-card:hover { border-color: #10b981; transform: translateY(-2px); }
 
-        /* Color Coding */
-        .rank-lr { color: #facc15; } /* Gold */
-        .rank-mr { color: #10b981; } /* Green */
-        .rank-hr { color: #3b82f6; } /* Blue */
-        .rank-exec { color: #a855f7; } /* Purple */
+        /* Tier Colors */
+        .text-lr { color: #facc15; }
+        .text-mr { color: #10b981; }
+        .text-hr { color: #3b82f6; }
+        .text-exec { color: #a855f7; }
+        .text-public { color: #94a3b8; }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -74,54 +75,102 @@
         </header>
 
         <article class="p-8 md:p-16 max-w-6xl">
-            <h1 class="text-5xl font-extrabold mb-10 text-white">Group Ranks</h1>
+            <h1 class="text-5xl font-extrabold mb-12 text-white">Full Rank Hierarchy</h1>
 
-            <section class="mb-20">
-                <div class="flex items-center gap-4 mb-8">
-                    <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest border-b border-gray-800 pb-2 flex-1">Middle Ranks (MR)</h2>
-                    <span class="bg-green-900/30 text-green-500 text-[10px] px-2 py-1 rounded border border-green-500/20 font-bold uppercase">Management Tier</span>
-                </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="rank-card p-6 rounded-xl">
-                        <h3 class="text-xl font-bold rank-mr">Staff Supervisor</h3>
-                        <p class="text-gray-400 text-sm mt-3">Responsible for overseeing store operations and ensuring LRs are performing their duties correctly.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-800">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase">Requirement:</span>
-                            <p class="text-xs text-white">Application Pass / Activity</p>
-                        </div>
+            <section class="mb-16">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Public Tiers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="font-bold text-public">Valued Customer</h3>
+                        <p class="text-gray-400 text-xs mt-2">Standard group member and shopper.</p>
                     </div>
-
-                    <div class="rank-card p-6 rounded-xl">
-                        <h3 class="text-xl font-bold rank-mr">Assistant Manager</h3>
-                        <p class="text-gray-400 text-sm mt-3">Supports the Store Manager in daily tasks. Authorized to assist in training sessions.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-800">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase">Requirement:</span>
-                            <p class="text-xs text-white">Promoted from Supervisor</p>
-                        </div>
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="font-bold text-pink-500">Noted Customer</h3>
+                        <p class="text-gray-400 text-xs mt-2">Recognized former staff or contributors.</p>
                     </div>
-
-                    <div class="rank-card p-6 rounded-xl">
-                        <h3 class="text-xl font-bold rank-mr">Store Manager</h3>
-                        <p class="text-gray-400 text-sm mt-3">Full oversight of the store. Can handle minor staff disputes and host official training sessions.</p>
-                        <div class="mt-4 pt-4 border-t border-gray-800">
-                            <span class="text-[10px] text-gray-500 font-bold uppercase">Requirement:</span>
-                            <p class="text-xs text-white">Management Excellence</p>
-                        </div>
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="font-bold text-orange-500">Awaiting Training</h3>
+                        <p class="text-gray-400 text-xs mt-2">Newly joined members ready to begin staff training.</p>
                     </div>
                 </div>
             </section>
 
-            <section class="mb-20">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-8 border-b border-gray-800 pb-2">Lower Ranks (LR)</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <section class="mb-16">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Lower Ranks (LR)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold rank-lr">Junior Store College</h4>
-                        <p class="text-xs text-gray-500 mt-2">Entry-level retail training staff.</p>
+                        <h4 class="font-bold text-lr">Junior Store College</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Entry-level trainee for store operations.</p>
                     </div>
                     <div class="rank-card p-5 rounded-lg">
-                        <h4 class="font-bold rank-lr">Junior Security</h4>
-                        <p class="text-xs text-gray-500 mt-2">Entry-level safety training staff.</p>
+                        <h4 class="font-bold text-lr">Junior Security</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Entry-level trainee for security operations.</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h4 class="font-bold text-lr">Store College</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Passed basic training; working on the floor.</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h4 class="font-bold text-lr">Security College</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Passed basic training; patrolling the store.</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h4 class="font-bold text-lr">Senior Store College</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Experienced retail staff member.</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h4 class="font-bold text-lr">Senior Security</h4>
+                        <p class="text-[10px] text-gray-500 mt-1">Experienced safety staff member.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Middle Ranks (MR)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="font-bold text-mr">Department Supervisor</h3>
+                        <p class="text-gray-400 text-sm mt-2">Oversees daily LR operations and helps with trainings.</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="font-bold text-mr">Assistant Store Manager</h3>
+                        <p class="text-gray-400 text-sm mt-2">Management support and trainee evaluation.</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="font-bold text-mr">Store Manager</h3>
+                        <p class="text-gray-400 text-sm mt-2">Leads the MR team and hosts official sessions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">High Ranks (HR)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rank-card p-6 rounded-lg border-t-2 border-t-blue-500">
+                        <h3 class="font-bold text-hr">Executive Store Manager</h3>
+                        <p class="text-gray-400 text-sm mt-2">Handles staff complaints and group efficiency.</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg border-t-2 border-t-blue-500">
+                        <h3 class="font-bold text-hr">Chief Operations Officer</h3>
+                        <p class="text-gray-400 text-sm mt-2">Directly manages all MR/HR performance.</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg border-t-2 border-t-blue-500">
+                        <h3 class="font-bold text-hr">Employment Director</h3>
+                        <p class="text-gray-400 text-sm mt-2">In charge of promotions and blacklist management.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-16">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Executive Leadership</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="rank-card p-8 rounded-xl border border-purple-500/30">
+                        <h3 class="text-2xl font-bold text-exec">Vice-Chairman</h3>
+                        <p class="text-gray-400 mt-2">Second-in-command. Oversees all group departments.</p>
+                    </div>
+                    <div class="rank-card p-8 rounded-xl border border-purple-500/30">
+                        <h3 class="text-2xl font-bold text-exec">Group Chairman</h3>
+                        <p class="text-gray-400 mt-2">Founder and Owner of Fresh-Mart.</p>
                     </div>
                 </div>
             </section>

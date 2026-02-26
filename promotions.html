@@ -3,35 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh-Mart | Staff Promotions</title>
+    <title>Fresh-Mart | Welcome</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
-        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; flex-shrink: 0; height: 100vh; position: sticky; top: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
-        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
-        .promo-alert { background-color: #1c1917; border-left: 4px solid #ca8a04; }
-        .breadcrumb { background-color: #262626; color: #10b981; padding: 2px 8px; border-radius: 4px; font-size: 0.875rem; }
+        .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
     </style>
 </head>
 <body class="flex min-h-screen">
-
-    <aside class="sidebar flex flex-col hidden lg:flex">
+    <aside class="sidebar flex flex-col">
         <div class="p-6 border-b border-gray-800 flex items-center gap-2">
             <i data-lucide="shield-check" class="text-green-500"></i>
             <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
         </div>
-        <nav class="flex-1 overflow-y-auto py-4">
+        <nav class="flex-1 py-4">
             <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
-            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+            <a href="index.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
             </a>
-            
             <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">Staff Info</div>
-            <a href="promotions.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
             </a>
             <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
@@ -43,74 +39,36 @@
         </nav>
     </aside>
 
-    <main class="flex-1 flex flex-col">
-        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0 z-10">
-            <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="home" class="w-4 h-4"></i> 
-                <span>/</span> <span>Staff Info</span> <span>/</span> 
-                <span class="breadcrumb">Staff Promotions</span>
-            </div>
-        </header>
+    <main class="flex-1">
         <header class="h-16 flex items-center justify-between px-8 border-b border-gray-800 bg-[#0f0f0f]">
-    <div class="flex items-center gap-3 text-sm text-gray-400">
-        <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="text-green-500">Welcome</span>
-    </div>
-
-    <button onclick="loginWithRoblox()" class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium transition-all text-sm">
-        <i data-lucide="log-in" class="w-4 h-4"></i>
-        Login with Roblox
-    </button>
-</header>
-
-        <article class="p-8 md:p-16 max-w-4xl w-full">
-            <h1 class="text-5xl font-extrabold mb-10 text-white tracking-tight">Staff Promotions</h1>
+            <div class="flex items-center gap-3 text-sm text-gray-400">
+                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="text-green-500">Welcome</span>
+            </div>
+            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium transition-all text-sm">
+                <i data-lucide="log-in" class="w-4 h-4"></i> Login with Roblox
+            </button>
+        </header>
+        <article class="p-8 md:p-16 max-w-4xl">
+            <h1 class="text-5xl font-extrabold mb-10 text-white">Welcome</h1>
             
-            <div class="promo-alert p-6 rounded-r-md mb-12 flex gap-4">
-                <i data-lucide="trending-up" class="w-6 h-6 text-yellow-500 flex-shrink-0"></i>
-                <div>
-                    <h4 class="text-yellow-500 font-bold text-xs uppercase mb-1">Promotion Policy</h4>
-                    <p class="text-gray-300 text-sm leading-relaxed">Learn how to level up within the Fresh-Mart team through activity, dedication, and leadership.</p>
-                </div>
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed mb-10">
+                <p>
+                    This official Staff Guide serves as the primary resource for all Fresh-Mart employees. Whether you are a newly recruited Trainee or a seasoned member of our High Rank team, this documentation is designed to provide clear, concise information regarding our daily operations, expectations, and professional standards.
+                </p>
+                <p>
+                    Our goal is to maintain a high-quality shopping environment for our customers. By using this guide, you will understand the path to promotion, the responsibilities tied to your specific rank, and the code of conduct required to keep our community safe and enjoyable for everyone.
+                </p>
             </div>
 
-            <section class="space-y-8">
+            <div class="info-alert p-6 rounded-r-md flex gap-4">
+                <i data-lucide="info" class="w-6 h-6 text-cyan-400"></i>
                 <div>
-                    <h2 class="text-2xl font-bold text-white mb-6">How to get Promoted</h2>
-                    <div class="grid gap-4">
-                        <div class="flex items-start gap-4 p-4 bg-[#161616] border border-gray-800 rounded-lg">
-                            <i data-lucide="award" class="w-5 h-5 text-green-500 mt-1"></i>
-                            <div>
-                                <p class="text-gray-200 font-medium">Professionalism</p>
-                                <p class="text-gray-500 text-sm">Maintain a positive and professional attitude at all times while on duty.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 bg-[#161616] border border-gray-800 rounded-lg">
-                            <i data-lucide="calendar" class="w-5 h-5 text-green-500 mt-1"></i>
-                            <div>
-                                <p class="text-gray-200 font-medium">Activity</p>
-                                <p class="text-gray-500 text-sm">Attend at least 2 training sessions weekly to stay sharp and eligible for rank-ups.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 bg-[#161616] border border-gray-800 rounded-lg">
-                            <i data-lucide="shield-check" class="w-5 h-5 text-green-500 mt-1"></i>
-                            <div>
-                                <p class="text-gray-200 font-medium">Clean Record</p>
-                                <p class="text-gray-500 text-sm">Follow all staff regulations meticulously without receiving any warnings.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 p-4 bg-[#161616] border border-gray-800 rounded-lg">
-                            <i data-lucide="zap" class="w-5 h-5 text-green-500 mt-1"></i>
-                            <div>
-                                <p class="text-gray-200 font-medium">Leadership</p>
-                                <p class="text-gray-500 text-sm">Demonstrate leadership and grammar skills while on-duty at the store.</p>
-                            </div>
-                        </div>
-                    </div>
+                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Getting Started</h4>
+                    <p class="text-gray-300 text-sm">Navigate through the sidebar to find information on ranks, promotions, and our rules. Notice any errors? Contact Cookie.dev7457.</p>
                 </div>
-            </section>
+            </div>
         </article>
     </main>
-
     <script>lucide.createIcons();</script>
 </body>
 </html>

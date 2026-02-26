@@ -13,6 +13,25 @@
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
         .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
+
+        /* Custom Danger Alert Styling to match your screenshot */
+        .danger-alert {
+            background-color: rgba(220, 38, 38, 0.05); /* Very subtle red tint */
+            border-radius: 0 0.375rem 0.375rem 0; /* Rounded corners on the right */
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* The solid red bar on the left */
+        .danger-alert::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #dc2626; /* Strict red color */
+        }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -52,6 +71,7 @@
             </a>
         </nav>
     </aside>
+
     <main class="flex-1">
         <header class="h-16 flex items-center justify-between px-8 border-b border-gray-800 bg-[#0f0f0f]">
             <div class="flex items-center gap-3 text-sm text-gray-400">
@@ -64,20 +84,27 @@
 
         <article class="p-8 md:p-16 max-w-4xl">
             <h1 class="text-5xl font-extrabold mb-10 text-white">Training Guide</h1>
-            <div class="danger-alert p-6 rounded-r-md mb-12 flex gap-4">
-                <i data-lucide="alert-triangle" class="w-6 h-6 text-red-500 flex-shrink-0"></i>
+
+            <div class="danger-alert p-6 mb-12 flex gap-4">
+                <div class="bg-red-500/10 p-2 rounded-md h-fit">
+                    <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500 flex-shrink-0"></i>
+                </div>
                 <div>
-                    <h4 class="text-red-500 font-bold text-xs uppercase mb-1">Strict Training Enforcement</h4>
-                    <p class="text-gray-300 text-sm">Failure to comply with the script and/or the Host, may result in dismissal from the session.</p>
+                    <h4 class="text-red-500 font-bold text-xs uppercase mb-1 tracking-wider">Strict Training Enforcement</h4>
+                    <p class="text-gray-300 text-sm leading-relaxed">Failure to comply with the script and/or the Host, may result in dismissal from the session.</p>
                 </div>
             </div>
-           <div class="space-y-6 text-lg text-gray-300 leading-relaxed">
-             <p>Welcome to Fresh-Mart's Training Guide. Here you can find all needed infomation to host or train at any training.</p>
-           </div>
 
-            <div class="bg-[#161616] p-6 rounded-lg border border-gray-800">
-                <h3 class="text-xl font-bold mb-4">Host Responsibilities</h3>
-                <ul class="list-disc ml-6 space-y-2 text-gray-400">
+            <div class="space-y-6 text-lg text-gray-300 leading-relaxed mb-12">
+                <p>Welcome to Fresh-Mart's Training Guide. Here you can find all needed information to host or train at any training.</p>
+            </div>
+
+            <div class="bg-[#161616] p-8 rounded-lg border border-gray-800">
+                <h3 class="text-xl font-bold mb-6 text-white flex items-center gap-2">
+                    <i data-lucide="clipboard-list" class="text-green-500 w-5 h-5"></i>
+                    Host Responsibilities
+                </h3>
+                <ul class="list-disc ml-6 space-y-3 text-gray-400">
                     <li>Arrive at the training center 15 minutes early.</li>
                     <li>Ensure all trainers are assigned to a group.</li>
                     <li>Maintain a professional demeanor throughout the session.</li>

@@ -31,10 +31,36 @@
             <h1 class="text-xl font-bold text-white">Fresh-Mart</h1>
         </div>
         <nav class="flex-1 py-4">
-            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">LR Info</div>
-            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Promotions</a>
-            <a href="ranks.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">Group Ranks</a>
-            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Rules</a>
+            <nav class="flex-1 py-4 overflow-y-auto">
+            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
+            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">LR Info</div>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
+            </a>
+            <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
+            </a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">MR Info</div>
+            <a href="training.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-4 h-4"></i> Training Guide</div>
+            </a>
+            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">HR Info</div>
+            <a href="general.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="info" class="w-4 h-4"></i> General Information</div>
+            </a>
+            <a href="activity.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="calendar" class="w-4 h-4"></i> Activity Information</div>
+            </a>
+            <a href="punishments.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+                <div class="flex items-center gap-3"><i data-lucide="alert-circle" class="w-4 h-4"></i> Punishment Information</div>
+            </a>
+        </nav>
         </nav>
     </aside>
 
@@ -46,104 +72,103 @@
             <h1 class="text-6xl font-extrabold text-white mb-2">Rank Hierarchy</h1>
             <p class="text-gray-400 italic">Click any rank to view promotion eligibility.</p>
         </header>
-
-                <section class="mb-12">
-            <div class="tier-label">Ownership Staff</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div class="rank-card p-6" onclick="openRank('Group Chairman', 'OWNERSHIP', 'The founder and ultimate authority of Fresh-Mart.', 'N/A', '#a855f7')">
-                    <h4 class="text-xl font-bold" style="color: #a855f7;">Group Chairman</h4>
-                    <span class="text-xs font-bold text-gray-500">OWNERSHIP TIER</span>
-                </div>
-                <div class="rank-card p-6" onclick="openRank('Vice-Chairman', 'OWNERSHIP', 'Assisting the Chairman in group-wide oversight.', 'Selection only.', '#a855f7')">
-                    <h4 class="text-xl font-bold" style="color: #a855f7;">Vice-Chairman</h4>
-                    <span class="text-xs font-bold text-gray-500">OWNERSHIP TIER</span>
-            </div>
-        </section>
-
         <section class="mb-12">
-            <div class="tier-label">Senior High Staff (SHR)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                </div>
-                <div class="rank-card p-6" onclick="openRank('Board Of Directors', 'SHR', 'Executive advisors and decision makers for group policy.', 'Invited by Leadership.', '#f97316')">
-                    <h4 class="text-xl font-bold text-orange-500">Board Of Directors</h4>
-                    <span class="text-xs font-bold text-gray-500">SHR TIER</span>
-                </div>
-                <div class="rank-card p-6" onclick="openRank('Site Administration', 'SHR', 'Overseeing technical and site-wide administrative tasks.', 'Application/Selection.', '#ef4444')">
-                    <h4 class="text-xl font-bold text-red-500">Site Administration</h4>
-                    <span class="text-xs font-bold text-gray-500">SHR TIER</span>
-                </div>
-                <div class="rank-card p-6" onclick="openRank('Site & Engineer Crew', 'SHR', 'Responsible for site maintenance and engineering standards.', 'Application.', '#ef4444')">
-                    <h4 class="text-xl font-bold text-red-500">Site & Engineer Crew</h4>
-                    <span class="text-xs font-bold text-gray-500">SHR TIER</span>
-                </div>
-            </div>
-        </section>
+    <div class="tier-label">Ownership Staff</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="rank-card p-6" onclick="openRank('Group Chairman', 'OWNER', 'The founder and ultimate authority.', 'N/A', '#a855f7')">
+            <h4 class="text-xl font-bold" style="color: #a855f7;">Group Chairman</h4>
+            <span class="text-xs font-bold text-gray-500">OWNERSHIP TIER</span>
+        </div>
+        <div class="rank-card p-6" onclick="openRank('Vice-Chairman', 'OWNER', 'Direct support for the Group Chairman.', 'Selection only.', '#a855f7')">
+            <h4 class="text-xl font-bold" style="color: #a855f7;">Vice-Chairman</h4>
+            <span class="text-xs font-bold text-gray-500">OWNERSHIP TIER</span>
+        </div>
+    </div>
+</section>
 
-        <section class="mb-12">
-            <div class="tier-label">Management (MR/HR)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="rank-card p-5" onclick="openRank('Executive Store Manager', 'HR', 'Lead manager for all store-front operations.', 'Promotion.', '#10b981')">
-                    <h4 class="font-bold text-green-500">Executive Store Manager</h4>
-                </div>
-                <div class="rank-card p-5" onclick="openRank('Store Manager', 'MR', 'Head of the physical store location.', 'Promotion.', '#10b981')">
-                    <h4 class="font-bold text-green-500">Store Manager</h4>
-                </div>
-                <div class="rank-card p-5" onclick="openRank('Assistant Store Manager', 'MR', 'Supporting management with staff supervision.', 'Promotion.', '#10b981')">
-                    <h4 class="font-bold text-green-500">Assistant Store Manager</h4>
-                </div>
-                <div class="rank-card p-5" onclick="openRank('Department Manager', 'MR', 'Managing specific store departments.', 'Promotion.', '#10b981')">
-                    <h4 class="font-bold text-green-500">Department Manager</h4>
-                </div>
-            </div>
-        </section>
+<section class="mb-12">
+    <div class="tier-label">Senior High Staff (SHR)</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rank-card p-6" onclick="openRank('Board Of Directors', 'SHR', 'Executive decision makers.', 'Selection.', '#f97316')">
+            <h4 class="text-lg font-bold text-orange-500">Board Of Directors</h4>
+            <span class="text-xs font-bold text-gray-500">SHR TIER</span>
+        </div>
+        <div class="rank-card p-6" onclick="openRank('Site Administration', 'SHR', 'Managing site-wide administrative tasks.', 'Application.', '#ef4444')">
+            <h4 class="text-lg font-bold text-red-500">Site Administration</h4>
+            <span class="text-xs font-bold text-gray-500">SHR TIER</span>
+        </div>
+        <div class="rank-card p-6" onclick="openRank('Site & Engineer Crew', 'SHR', 'Responsible for maintenance and engineering.', 'Application.', '#ef4444')">
+            <h4 class="text-lg font-bold text-red-500">Site & Engineer Crew</h4>
+            <span class="text-xs font-bold text-gray-500">SHR TIER</span>
+        </div>
+    </div>
+</section>
 
-        <section class="mb-12">
-            <div class="tier-label">Security & Supervision</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="rank-card p-4" onclick="openRank('Senior Team Leader', 'SUPERVISOR', 'Overseeing multiple staff teams.', 'Promotion.', '#3b82f6')">
-                    <h4 class="font-bold text-blue-400">Senior Team Leader</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Senior Lead Security', 'SECURITY', 'Highest level security personnel.', 'Promotion.', '#3b82f6')">
-                    <h4 class="font-bold text-blue-400">Senior Lead Security</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Lead Security', 'SECURITY', 'Supervising security patrols.', 'Promotion.', '#3b82f6')">
-                    <h4 class="font-bold text-blue-400">Lead Security</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Security Supervisor', 'SECURITY', 'On-floor security management.', 'Promotion.', '#3b82f6')">
-                    <h4 class="font-bold text-blue-400">Security Supervisor</h4>
-                </div>
-            </div>
-        </section>
+<section class="mb-12">
+    <div class="tier-label">High Management (HR)</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rank-card p-5" onclick="openRank('Executive Store Manager', 'HR', 'Lead manager for store operations.', 'Promotion.', '#10b981')">
+            <h4 class="font-bold text-green-500">Executive Store Manager</h4>
+        </div>
+        <div class="rank-card p-5" onclick="openRank('Senior Team Leader', 'HR', 'Supervising multiple staff teams.', 'Promotion.', '#3b82f6')">
+            <h4 class="font-bold text-blue-400">Senior Team Leader</h4>
+        </div>
+        <div class="rank-card p-5" onclick="openRank('Senior Lead Security', 'HR', 'Overseeing security departments.', 'Promotion.', '#3b82f6')">
+            <h4 class="font-bold text-blue-400">Senior Lead Security</h4>
+        </div>
+    </div>
+</section>
 
-        <section class="mb-12">
-            <div class="tier-label">Store Staff (LR)</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                <div class="rank-card p-4" onclick="openRank('Senior Security', 'LR', 'Advanced protection staff.', 'Promotion.', '#9ca3af')">
-                    <h4 class="font-bold text-gray-300">Senior Security</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Security College', 'LR', 'Security staff in training.', 'Pass Security Exam.', '#9ca3af')">
-                    <h4 class="font-bold text-gray-300">Security College</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Junior Store College', 'LR', 'New staff members learning store operations.', 'Pass Training.', '#9ca3af')">
-                    <h4 class="font-bold text-gray-300">Junior Store College</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Awaiting Training', 'LR', 'Applicants who passed the application center.', 'Application.', '#9ca3af')">
-                    <h4 class="font-bold text-gray-300">Awaiting Training</h4>
-                </div>
-            </div>
-        </section>
+<section class="mb-12">
+    <div class="tier-label">Middle Management (MR)</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rank-card p-4" onclick="openRank('Store Manager', 'MR', 'Head of daily store operations.', 'Promotion.', '#10b981')">
+            <h4 class="font-bold text-green-500 text-sm">Store Manager</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Assistant Store Manager', 'MR', 'Assisting in store leadership.', 'Promotion.', '#10b981')">
+            <h4 class="font-bold text-green-500 text-sm">Assistant Store Manager</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Department Manager', 'MR', 'Managing a specific department.', 'Promotion.', '#10b981')">
+            <h4 class="font-bold text-green-500 text-sm">Department Manager</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Lead Security', 'MR', 'Supervising on-duty security.', 'Promotion.', '#3b82f6')">
+            <h4 class="font-bold text-blue-400 text-sm">Lead Security</h4>
+        </div>
+    </div>
+</section>
 
-        <section>
-            <div class="tier-label">Public</div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="rank-card p-4" onclick="openRank('Noted Customer', 'PUBLIC', 'Recognized community members.', 'N/A', '#6b7280')">
-                    <h4 class="font-bold text-gray-500">Noted Customer</h4>
-                </div>
-                <div class="rank-card p-4" onclick="openRank('Valued Customer', 'PUBLIC', 'Respected shoppers.', 'Gamepass.', '#6b7280')">
-                    <h4 class="font-bold text-gray-500">Valued Customer</h4>
-                </div>
-            </div>
-        </section>
+<section class="mb-12">
+    <div class="tier-label">Store Staff (LR)</div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="rank-card p-4" onclick="openRank('Security Supervisor', 'LR', 'Managing flow and security incidents.', 'Promotion.', '#3b82f6')">
+            <h4 class="font-bold text-blue-400 text-xs">Security Supervisor</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Senior Security', 'LR', 'Experienced protection staff.', 'Promotion.', '#9ca3af')">
+            <h4 class="font-bold text-gray-300 text-xs">Senior Security</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Senior Store College', 'LR', 'Advanced training student.', 'Activity.', '#9ca3af')">
+            <h4 class="font-bold text-gray-300 text-xs">Senior Store College</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Store College', 'LR', 'Standard training student.', 'Activity.', '#9ca3af')">
+            <h4 class="font-bold text-gray-300 text-xs">Store College</h4>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="tier-label">Guest Ranks & Public</div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="rank-card p-4" onclick="openRank('Awaiting Training', 'GUEST', 'Passed applicants.', 'Application.', '#9ca3af')">
+            <h4 class="font-bold text-gray-400">Awaiting Training</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Valued Customer', 'GUEST', 'Respected community member.', 'Gamepass.', '#6b7280')">
+            <h4 class="font-bold text-gray-500">Valued Customer</h4>
+        </div>
+        <div class="rank-card p-4" onclick="openRank('Noted Customer', 'LEGACY', 'Previous SHR members.', 'Resignation in good standing.', '#6b7280')">
+            <h4 class="font-bold text-gray-500">Noted Customer</h4>
+        </div>
+    </div>
+</section>
     </main>
 
     <div id="rankModal" class="modal-overlay" onclick="closeRank()">

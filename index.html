@@ -9,8 +9,9 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
-        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
+        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
         .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
     </style>
@@ -33,39 +34,4 @@
             <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
             </a>
-            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
-            </a>
-        </nav>
-    </aside>
-
-    <main class="flex-1">
-        <header class="h-16 flex items-center px-8 border-b border-gray-800 bg-[#0f0f0f]">
-            <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="text-green-500">Welcome</span>
-            </div>
-        </header>
-        <article class="p-8 md:p-16 max-w-4xl">
-            <h1 class="text-5xl font-extrabold mb-10 text-white">Welcome</h1>
-
-             <div class="info-alert p-6 rounded-r-md flex gap-4">
-                <i data-lucide="info" class="w-6 h-6 text-cyan-400"></i>
-                <div>
-                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Getting Started</h4>
-                    <p class="text-gray-300 text-sm">Please navigate through the sidebar to find information on ranks, promotions, and our rules. Notice any incorrect information? Contact Cookie.dev7457.</p>
-                </div>
-            </div>
-            
-            <div class="space-y-6 text-lg text-gray-300 leading-relaxed mb-10">
-                <p>
-                    Welcome to Fresh-Mart's official staff handbook.
-                </p>
-                <p>
-                    Our goal is to maintain a high-quality shopping environment for our customers. By using this guide, you will understand the path to promotion, the responsibilities tied to your specific rank, and the code of conduct required to keep our community safe and enjoyable for everyone.
-                </p>
-            </div>
-        </article>
-    </main>
-    <script>lucide.createIcons();</script>
-</body>
-</html>
+            <a href="rules.html" class="sidebar-item

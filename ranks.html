@@ -3,29 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh-Mart | Group Ranks</title>
+    <title>Fresh-Mart | Rank Hierarchy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; overflow-x: hidden; }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
+        
         .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
-        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
+
+        .rank-card { background-color: #161616; border: 1px solid #262626; transition: transform 0.2s, border-color 0.2s; cursor: pointer; border-radius: 8px; }
+        .rank-card:hover { transform: translateY(-2px); border-color: #3f3f3f; }
+
+        .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; backdrop-filter: blur(4px); }
+        .modal-content { background: #161616; border: 1px solid #262626; width: 100%; max-width: 500px; border-radius: 12px; padding: 32px; position: relative; }
         
-        .rank-card { background-color: #161616; border: 1px solid #262626; transition: all 0.2s; cursor: pointer; }
-        .rank-card:hover { border-color: #10b981; transform: translateY(-2px); background-color: #1a1a1a; }
-
-        /* Modal Styles */
-        #rankModal { transition: opacity 0.3s ease, visibility 0.3s; }
-        .modal-content { transform: scale(0.95); transition: transform 0.3s ease; }
-        #rankModal.active .modal-content { transform: scale(1); }
-
-        .text-lr { color: #facc15; }
-        .text-mr { color: #10b981; }
-        .text-hr { color: #3b82f6; }
-        .text-exec { color: #a855f7; }
+        .tier-label { text-xs font-bold text-gray-600 uppercase tracking-widest mb-6 pb-2 border-b border-gray-800 flex justify-between items-center; }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -33,117 +28,163 @@
     <aside class="sidebar flex flex-col">
         <div class="p-6 border-b border-gray-800 flex items-center gap-2">
             <i data-lucide="shield-check" class="text-green-500"></i>
-            <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
+            <h1 class="text-xl font-bold text-white">Fresh-Mart</h1>
         </div>
-        <nav class="flex-1 py-4 overflow-y-auto">
-            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
-            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
-            </a>
-            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">LR Info</div>
-            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
-            </a>
-            <a href="ranks.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
-            </a>
-            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
-            </a>
-            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">MR Info</div>
-            <a href="training.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-4 h-4"></i> Training Guide</div>
-            </a>
-            <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">HR Info</div>
-            <a href="general.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="info" class="w-4 h-4"></i> General Information</div>
-            </a>
-            <a href="activity.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="calendar" class="w-4 h-4"></i> Activity Information</div>
-            </a>
-            <a href="punishments.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
-                <div class="flex items-center gap-3"><i data-lucide="alert-circle" class="w-4 h-4"></i> Punishment Information</div>
-            </a>
+        <nav class="flex-1 py-4">
+            <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">LR Info</div>
+            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Promotions</a>
+            <a href="ranks.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">Group Ranks</a>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">Staff Rules</a>
         </nav>
     </aside>
 
-    <main class="flex-1 overflow-y-auto">
-        <header class="h-16 flex items-center justify-between px-8 border-b border-gray-800 bg-[#0f0f0f] sticky top-0 z-50">
-            <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="users" class="w-4 h-4"></i> <span>/</span> <span>LR Info</span> <span>/</span> <span class="text-green-500">Group Ranks</span>
+    <main class="flex-1 p-8 md:p-16 overflow-y-auto">
+        <header class="mb-12">
+            <div class="flex items-center gap-2 text-sm text-gray-500 mb-4">
+                <i data-lucide="users" class="w-4 h-4"></i> / <span>LR Info</span> / <span class="text-green-500">Group Ranks</span>
             </div>
-            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium text-sm transition-all">
-                <i data-lucide="log-in" class="w-4 h-4"></i> Login with Roblox
-            </button>
+            <h1 class="text-6xl font-extrabold text-white mb-2">Rank Hierarchy</h1>
+            <p class="text-gray-400 italic">Click any rank to view promotion eligibility.</p>
         </header>
 
-        <article class="p-8 md:p-16 max-w-6xl">
-            <h1 class="text-5xl font-extrabold mb-4 text-white">Rank Hierarchy</h1>
-            <p class="text-gray-400 mb-12 italic text-sm">Click any rank to view promotion eligibility.</p>
-
-            <section class="mb-16">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Management & Executive</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div class="rank-card p-6 rounded-lg" onclick="openModal('Group Chairman', 'Owner', 'N/A', 'The founder and ultimate authority of Fresh-Mart.')">
-                        <h3 class="font-bold text-exec text-xl">Group Chairman</h3>
-                        <p class="text-gray-500 text-xs mt-1 text-exec font-medium uppercase tracking-tighter">Ownership Tier</p>
-                    </div>
-                    <div class="rank-card p-6 rounded-lg" onclick="openModal('Store Manager', 'MR', 'Pass Supervisor / High Activity', 'Oversees store operations and hosts training sessions.')">
-                        <h3 class="font-bold text-mr text-xl">Store Manager</h3>
-                        <p class="text-gray-500 text-xs mt-1 text-mr font-medium uppercase tracking-tighter">Management Tier</p>
-                    </div>
+                <section class="mb-12">
+            <div class="tier-label">Ownership Staff</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <div class="rank-card p-6" onclick="openRank('Group Chairman', 'OWNERSHIP', 'The founder and ultimate authority of Fresh-Mart.', 'N/A', '#a855f7')">
+                    <h4 class="text-xl font-bold" style="color: #a855f7;">Group Chairman</h4>
+                    <span class="text-xs font-bold text-gray-500">OWNERSHIP TIER</span>
                 </div>
-            </section>
-        </article>
+                <div class="rank-card p-6" onclick="openRank('Vice-Chairman', 'OWNERSHIP', 'Assisting the Chairman in group-wide oversight.', 'Selection only.', '#a855f7')">
+                    <h4 class="text-xl font-bold" style="color: #a855f7;">Vice-Chairman</h4>
+                    <span class="text-xs font-bold text-gray-500">OWNERSHIP TIER</span>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="tier-label">Senior High Staff (SHR)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                </div>
+                <div class="rank-card p-6" onclick="openRank('Board Of Directors', 'SHR', 'Executive advisors and decision makers for group policy.', 'Invited by Leadership.', '#f97316')">
+                    <h4 class="text-xl font-bold text-orange-500">Board Of Directors</h4>
+                    <span class="text-xs font-bold text-gray-500">SHR TIER</span>
+                </div>
+                <div class="rank-card p-6" onclick="openRank('Site Administration', 'SHR', 'Overseeing technical and site-wide administrative tasks.', 'Application/Selection.', '#ef4444')">
+                    <h4 class="text-xl font-bold text-red-500">Site Administration</h4>
+                    <span class="text-xs font-bold text-gray-500">SHR TIER</span>
+                </div>
+                <div class="rank-card p-6" onclick="openRank('Site & Engineer Crew', 'SHR', 'Responsible for site maintenance and engineering standards.', 'Application.', '#ef4444')">
+                    <h4 class="text-xl font-bold text-red-500">Site & Engineer Crew</h4>
+                    <span class="text-xs font-bold text-gray-500">SHR TIER</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="tier-label">Management (MR/HR)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="rank-card p-5" onclick="openRank('Executive Store Manager', 'HR', 'Lead manager for all store-front operations.', 'Promotion.', '#10b981')">
+                    <h4 class="font-bold text-green-500">Executive Store Manager</h4>
+                </div>
+                <div class="rank-card p-5" onclick="openRank('Store Manager', 'MR', 'Head of the physical store location.', 'Promotion.', '#10b981')">
+                    <h4 class="font-bold text-green-500">Store Manager</h4>
+                </div>
+                <div class="rank-card p-5" onclick="openRank('Assistant Store Manager', 'MR', 'Supporting management with staff supervision.', 'Promotion.', '#10b981')">
+                    <h4 class="font-bold text-green-500">Assistant Store Manager</h4>
+                </div>
+                <div class="rank-card p-5" onclick="openRank('Department Manager', 'MR', 'Managing specific store departments.', 'Promotion.', '#10b981')">
+                    <h4 class="font-bold text-green-500">Department Manager</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="tier-label">Security & Supervision</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="rank-card p-4" onclick="openRank('Senior Team Leader', 'SUPERVISOR', 'Overseeing multiple staff teams.', 'Promotion.', '#3b82f6')">
+                    <h4 class="font-bold text-blue-400">Senior Team Leader</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Senior Lead Security', 'SECURITY', 'Highest level security personnel.', 'Promotion.', '#3b82f6')">
+                    <h4 class="font-bold text-blue-400">Senior Lead Security</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Lead Security', 'SECURITY', 'Supervising security patrols.', 'Promotion.', '#3b82f6')">
+                    <h4 class="font-bold text-blue-400">Lead Security</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Security Supervisor', 'SECURITY', 'On-floor security management.', 'Promotion.', '#3b82f6')">
+                    <h4 class="font-bold text-blue-400">Security Supervisor</h4>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="tier-label">Store Staff (LR)</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="rank-card p-4" onclick="openRank('Senior Security', 'LR', 'Advanced protection staff.', 'Promotion.', '#9ca3af')">
+                    <h4 class="font-bold text-gray-300">Senior Security</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Security College', 'LR', 'Security staff in training.', 'Pass Security Exam.', '#9ca3af')">
+                    <h4 class="font-bold text-gray-300">Security College</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Junior Store College', 'LR', 'New staff members learning store operations.', 'Pass Training.', '#9ca3af')">
+                    <h4 class="font-bold text-gray-300">Junior Store College</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Awaiting Training', 'LR', 'Applicants who passed the application center.', 'Application.', '#9ca3af')">
+                    <h4 class="font-bold text-gray-300">Awaiting Training</h4>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="tier-label">Public</div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="rank-card p-4" onclick="openRank('Noted Customer', 'PUBLIC', 'Recognized community members.', 'N/A', '#6b7280')">
+                    <h4 class="font-bold text-gray-500">Noted Customer</h4>
+                </div>
+                <div class="rank-card p-4" onclick="openRank('Valued Customer', 'PUBLIC', 'Respected shoppers.', 'Gamepass.', '#6b7280')">
+                    <h4 class="font-bold text-gray-500">Valued Customer</h4>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <div id="rankModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[100] invisible opacity-0 flex items-center justify-center p-4" onclick="closeModal()">
-        <div class="modal-content bg-[#161616] border border-gray-800 w-full max-w-md rounded-2xl p-8 shadow-2xl" onclick="event.stopPropagation()">
-            <div class="flex justify-between items-start mb-6">
-                <div>
-                    <h2 id="modalTitle" class="text-3xl font-bold text-white">Rank Name</h2>
-                    <p id="modalTier" class="text-green-500 text-xs font-bold uppercase tracking-widest mt-1">Tier Name</p>
-                </div>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-white transition-colors">
-                    <i data-lucide="x"></i>
-                </button>
-            </div>
+    <div id="rankModal" class="modal-overlay" onclick="closeRank()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <button onclick="closeRank()" class="absolute top-6 right-6 text-gray-500 hover:text-white">
+                <i data-lucide="x"></i>
+            </button>
             
-            <div class="space-y-6">
-                <div>
-                    <h4 class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Description</h4>
-                    <p id="modalDesc" class="text-gray-300 text-sm leading-relaxed">Description goes here.</p>
-                </div>
-                <div class="bg-black/30 p-4 rounded-lg border border-gray-800">
-                    <h4 class="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-1">How to reach this rank</h4>
-                    <p id="modalReq" class="text-white font-medium">Requirement details.</p>
-                </div>
+            <h2 id="m-name" class="text-4xl font-extrabold text-white mb-1">Rank Name</h2>
+            <p id="m-tier" class="text-xs font-bold uppercase tracking-widest mb-8">TIER</p>
+
+            <div class="mb-8">
+                <h5 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">Description</h5>
+                <p id="m-desc" class="text-gray-300 text-sm leading-relaxed"></p>
             </div>
-            
-            <button onclick="closeModal()" class="w-full mt-8 bg-gray-800 hover:bg-gray-700 text-white py-3 rounded-xl font-bold transition-all">Close Guide</button>
+
+            <div class="bg-[#0f0f0f] border border-gray-800 rounded-lg p-6 mb-8">
+                <h5 class="text-[10px] font-bold text-gray-500 uppercase tracking-widest mb-2">How to reach this rank</h5>
+                <p id="m-req" class="text-white font-bold text-lg"></p>
+            </div>
+
+            <button onclick="closeRank()" class="w-full bg-[#1c2431] hover:bg-[#252f3f] text-white py-4 rounded-lg font-bold text-sm transition-all">
+                Close Guide
+            </button>
         </div>
     </div>
 
     <script>
         lucide.createIcons();
 
-        function openModal(title, tier, req, desc) {
-            document.getElementById('modalTitle').innerText = title;
-            document.getElementById('modalTier').innerText = tier;
-            document.getElementById('modalReq').innerText = req;
-            document.getElementById('modalDesc').innerText = desc;
-            
-            const modal = document.getElementById('rankModal');
-            modal.classList.remove('invisible');
-            modal.classList.add('active', 'opacity-100');
+        function openRank(name, tier, desc, req, color) {
+            document.getElementById('m-name').innerText = name;
+            document.getElementById('m-tier').innerText = tier;
+            document.getElementById('m-tier').style.color = color;
+            document.getElementById('m-desc').innerText = desc;
+            document.getElementById('m-req').innerText = req;
+            document.getElementById('rankModal').style.display = 'flex';
         }
 
-        function closeModal() {
-            const modal = document.getElementById('rankModal');
-            modal.classList.remove('active', 'opacity-100');
-            setTimeout(() => {
-                modal.classList.add('invisible');
-            }, 300);
+        function closeRank() {
+            document.getElementById('rankModal').style.display = 'none';
         }
     </script>
 </body>

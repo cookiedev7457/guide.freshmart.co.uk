@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh-Mart | Welcome</title>
+    <title>Fresh-Mart | Promotions</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
-        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; }
+        .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
-        .info-alert { background-color: #0d282d; border-left: 4px solid #00acc1; }
+        .promo-alert { background-color: #1c1917; border-left: 4px solid #ca8a04; }
     </style>
 </head>
 <body class="flex min-h-screen">
@@ -23,11 +23,11 @@
         </div>
         <nav class="flex-1 py-4">
             <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
-            <a href="index.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
+            <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
             </a>
             <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">Staff Info</div>
-            <a href="promotions.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
+            <a href="promotions.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="trending-up" class="w-4 h-4"></i> Staff Promotions</div>
             </a>
             <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
@@ -42,29 +42,30 @@
     <main class="flex-1">
         <header class="h-16 flex items-center justify-between px-8 border-b border-gray-800 bg-[#0f0f0f]">
             <div class="flex items-center gap-3 text-sm text-gray-400">
-                <i data-lucide="home" class="w-4 h-4"></i> <span>/</span> <span>Introduction</span> <span>/</span> <span class="text-green-500">Welcome</span>
+                <i data-lucide="trending-up" class="w-4 h-4"></i> <span>/</span> <span>Staff Info</span> <span>/</span> <span class="text-green-500">Staff Promotions</span>
             </div>
-            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium transition-all text-sm">
+            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium text-sm">
                 <i data-lucide="log-in" class="w-4 h-4"></i> Login with Roblox
             </button>
         </header>
         <article class="p-8 md:p-16 max-w-4xl">
-            <h1 class="text-5xl font-extrabold mb-10 text-white">Welcome</h1>
-            
-            <div class="space-y-6 text-lg text-gray-300 leading-relaxed mb-10">
-                <p>
-                    This official Staff Guide serves as the primary resource for all Fresh-Mart employees. Whether you are a newly recruited Trainee or a seasoned member of our High Rank team, this documentation is designed to provide clear, concise information regarding our daily operations, expectations, and professional standards.
-                </p>
-                <p>
-                    Our goal is to maintain a high-quality shopping environment for our customers. By using this guide, you will understand the path to promotion, the responsibilities tied to your specific rank, and the code of conduct required to keep our community safe and enjoyable for everyone.
-                </p>
-            </div>
-
-            <div class="info-alert p-6 rounded-r-md flex gap-4">
-                <i data-lucide="info" class="w-6 h-6 text-cyan-400"></i>
+            <h1 class="text-5xl font-extrabold mb-10 text-white">Staff Promotions</h1>
+            <div class="promo-alert p-6 rounded-r-md mb-12 flex gap-4">
+                <i data-lucide="trending-up" class="w-6 h-6 text-yellow-500"></i>
                 <div>
-                    <h4 class="text-cyan-400 font-bold text-xs uppercase mb-1">Getting Started</h4>
-                    <p class="text-gray-300 text-sm">Navigate through the sidebar to find information on ranks, promotions, and our rules. Notice any errors? Contact Cookie.dev7457.</p>
+                    <h4 class="text-yellow-500 font-bold text-xs uppercase mb-1">Promotion Policy</h4>
+                    <p class="text-gray-300 text-sm">Learn how to level up within the Fresh-Mart team through activity and dedication.</p>
+                </div>
+            </div>
+            <h2 class="text-2xl font-bold mb-6 text-white">How to get Promoted</h2>
+            <div class="space-y-4">
+                <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg flex items-center gap-4">
+                    <i data-lucide="check-circle" class="text-green-500"></i>
+                    <p class="text-gray-300">Maintain a professional attitude and high-quality grammar.</p>
+                </div>
+                <div class="p-4 bg-[#161616] border border-gray-800 rounded-lg flex items-center gap-4">
+                    <i data-lucide="calendar" class="text-green-500"></i>
+                    <p class="text-gray-300">Attend at least 2 training sessions per week.</p>
                 </div>
             </div>
         </article>

@@ -11,11 +11,24 @@
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
         .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
+        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
-        .rank-gold { color: #facc15; } .rank-pink { color: #ec4899; } .rank-orange { color: #f97316; } .rank-green { color: #10b981; }
+        
+        /* Rank Tier Colors */
+        .rank-gold { color: #facc15; }
+        .rank-blue { color: #3b82f6; }
+        .rank-red { color: #ef4444; }
+        .rank-purple { color: #a855f7; }
+        .rank-green { color: #10b981; }
+        .rank-orange { color: #f97316; }
+        .rank-pink { color: #ec4899; }
+
+        .rank-card { background-color: #161616; border: 1px solid #262626; transition: transform 0.2s; }
+        .rank-card:hover { transform: translateY(-2px); border-color: #3f3f46; }
     </style>
 </head>
 <body class="flex min-h-screen">
+
     <aside class="sidebar flex flex-col">
         <div class="p-6 border-b border-gray-800 flex items-center gap-2">
             <i data-lucide="shield-check" class="text-green-500"></i>
@@ -44,18 +57,100 @@
             <div class="flex items-center gap-3 text-sm text-gray-400">
                 <i data-lucide="users" class="w-4 h-4"></i> <span>/</span> <span>Staff Info</span> <span>/</span> <span class="text-green-500">Group Ranks</span>
             </div>
-            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium text-sm">
+            <button class="flex items-center gap-2 bg-[#10b981] hover:bg-[#059669] text-white px-4 py-2 rounded-md font-medium transition-all text-sm">
                 <i data-lucide="log-in" class="w-4 h-4"></i> Login with Roblox
             </button>
         </header>
+
         <article class="p-8 md:p-16 max-w-6xl">
-            <h1 class="text-5xl font-extrabold mb-10 text-white">Rank Structure</h1>
-            <section class="mb-12">
-                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Public Ranks</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div><h3 class="text-lg font-bold rank-green">Valued Customer</h3><p class="text-gray-400 text-sm mt-1">Standard group member and shopper.</p></div>
-                    <div><h3 class="text-lg font-bold rank-pink">Noted Customer</h3><p class="text-gray-400 text-sm mt-1">Recognized individuals or former staff.</p></div>
-                    <div><h3 class="text-lg font-bold rank-orange">Awaiting Training</h3><p class="text-gray-400 text-sm mt-1">New recruits ready for their first session.</p></div>
+            <h1 class="text-5xl font-extrabold mb-4 text-white">Rank Structure</h1>
+            <p class="text-gray-400 mb-12 text-lg">A comprehensive guide to the roles and responsibilities within Fresh-Mart.</p>
+
+            <section class="mb-20">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Public Tiers</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="text-lg font-bold rank-green">Valued Customer</h3>
+                        <p class="text-gray-400 text-sm mt-2">Supporters of the brand who enjoy shopping at our locations.</p>
+                        <p class="text-[10px] text-gray-600 mt-4 uppercase font-bold tracking-tighter italic">Requirement: Join the Group</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="text-lg font-bold rank-pink">Noted Customer</h3>
+                        <p class="text-gray-400 text-sm mt-2">Former staff or influential community members recognized by leadership.</p>
+                        <p class="text-[10px] text-gray-600 mt-4 uppercase font-bold tracking-tighter italic">Requirement: Notable Contribution</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg">
+                        <h3 class="text-lg font-bold rank-orange">Awaiting Training</h3>
+                        <p class="text-gray-400 text-sm mt-2">The starting point for all aspiring staff. Eligible to attend trainings.</p>
+                        <p class="text-[10px] text-gray-600 mt-4 uppercase font-bold tracking-tighter italic">Requirement: Apply via Center</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Staff Operations (LR)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="rank-card p-5 rounded-lg">
+                        <h3 class="font-bold rank-gold">Junior Store College</h3>
+                        <p class="text-gray-500 text-xs mt-2">New retail staff learning register operations and stocking.</p>
+                        <p class="text-[9px] text-gray-600 mt-3 uppercase font-bold italic">Requirement: Pass Training</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h3 class="font-bold rank-gold">Junior Security</h3>
+                        <p class="text-gray-500 text-xs mt-2">Trainee safety officers learning patrol routes and conduct.</p>
+                        <p class="text-[9px] text-gray-600 mt-3 uppercase font-bold italic">Requirement: Pass Training</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h3 class="font-bold rank-gold">Senior Security</h3>
+                        <p class="text-gray-500 text-xs mt-2">Experienced safety officers trusted with handling larger incidents.</p>
+                        <p class="text-[9px] text-gray-600 mt-3 uppercase font-bold italic">Requirement: High Activity</p>
+                    </div>
+                    <div class="rank-card p-5 rounded-lg">
+                        <h3 class="font-bold rank-gold">Department Supervisor</h3>
+                        <p class="text-gray-500 text-xs mt-2">Ensures LRs are active and professional on the store floor.</p>
+                        <p class="text-[9px] text-gray-600 mt-3 uppercase font-bold italic">Requirement: Leadership Merit</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="mb-20">
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Management (HR)</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="rank-card p-6 rounded-lg border-l-4 border-l-blue-500">
+                        <h3 class="font-bold rank-blue">Assistant Store Manager</h3>
+                        <p class="text-gray-400 text-sm mt-2">Manages day-to-day staff issues and assists the Store Manager.</p>
+                        <p class="text-[10px] text-blue-900 mt-4 uppercase font-extrabold italic">Requirement: HR Application/Invite</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg border-l-4 border-l-blue-500">
+                        <h3 class="font-bold rank-blue">Store Manager</h3>
+                        <p class="text-gray-400 text-sm mt-2">Complete oversight of the store. Manages training schedules.</p>
+                        <p class="text-[10px] text-blue-900 mt-4 uppercase font-extrabold italic">Requirement: Management Excellence</p>
+                    </div>
+                    <div class="rank-card p-6 rounded-lg border-l-4 border-l-blue-500">
+                        <h3 class="font-bold rank-blue">Team Leader</h3>
+                        <p class="text-gray-400 text-sm mt-2">Authorized to host official group training sessions.</p>
+                        <p class="text-[10px] text-blue-900 mt-4 uppercase font-extrabold italic">Requirement: Hosting Certification</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-6 border-b border-gray-800 pb-2">Ownership</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="p-8 bg-[#161616] border border-purple-900/30 rounded-lg flex items-center justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold rank-purple">Vice-Chairman</h3>
+                            <p class="text-gray-400 text-sm mt-2">Oversees all department managers and high-level strategy.</p>
+                        </div>
+                        <i data-lucide="shield-half" class="w-12 h-12 text-purple-500/20"></i>
+                    </div>
+                    <div class="p-8 bg-[#161616] border border-purple-900/30 rounded-lg flex items-center justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold rank-purple">Group Chairman</h3>
+                            <p class="text-gray-400 text-sm mt-2">The ultimate authority and founder of Fresh-Mart.</p>
+                        </div>
+                        <i data-lucide="crown" class="w-12 h-12 text-purple-500/20"></i>
+                    </div>
                 </div>
             </section>
         </article>

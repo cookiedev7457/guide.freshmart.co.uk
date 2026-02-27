@@ -3,34 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fresh-Mart | Rank Hierarchy</title>
+    <title>Fresh-Mart | Staff Rules</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #0f0f0f; color: #e5e7eb; margin: 0; }
         
         .sidebar { background-color: #161616; border-right: 1px solid #262626; width: 18rem; height: 100vh; position: sticky; top: 0; flex-shrink: 0; }
         .sidebar-item { border-left: 3px solid transparent; transition: all 0.2s; color: #9ca3af; text-decoration: none; }
-        .active-link { background-color: #1f1f1f; border-left-color: #10b981; color: #10b981 !important; }
-
-        .rank-card { background-color: #161616; border: 1px solid #262626; transition: transform 0.2s, border-color 0.2s; cursor: pointer; border-radius: 8px; }
-        .rank-card:hover { transform: translateY(-2px); border-color: #3f3f3f; }
-
-        .modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); display: none; align-items: center; justify-content: center; z-index: 50; padding: 20px; backdrop-filter: blur(4px); }
-        .modal-content { background: #161616; border: 1px solid #262626; width: 100%; max-width: 500px; border-radius: 12px; padding: 32px; position: relative; }
+        .sidebar-item:hover { background-color: #1f1f1f; color: #10b981; }
         
-        .tier-label { text-xs font-bold text-gray-600 uppercase tracking-widest mb-6 pb-2 border-b border-gray-800 flex justify-between items-center; }
+        .active-link { 
+            background-color: #1f1f1f; 
+            border-left-color: #10b981 !important; 
+            color: #10b981 !important; 
+        }
+
+        .danger-alert {
+            background-color: rgba(220, 38, 38, 0.1); 
+            border-radius: 0 4px 4px 0;
+            position: relative;
+        }
+        .danger-alert::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 4px;
+            background-color: #ef4444;
+        }
+
+        .discipline-card {
+            background-color: #161616;
+            border: 1px solid #262626;
+            padding: 1.5rem;
+            border-radius: 0.75rem;
+            flex: 1;
+        }
+        
+        .rule-section { margin-bottom: 2.5rem; }
+        .rule-header { color: #fff; font-weight: 700; font-size: 1.25rem; margin-bottom: 1rem; display: flex; items-center; gap: 0.5rem; }
+        .rule-item { margin-bottom: 1rem; border-left: 2px solid #262626; padding-left: 1rem; }
+        .rule-title { color: #10b981; font-weight: 600; font-size: 0.95rem; }
     </style>
 </head>
 <body class="flex min-h-screen">
-     <aside class="sidebar flex flex-col">
+
+    <aside class="sidebar flex flex-col">
         <div class="p-6 border-b border-gray-800 flex items-center gap-2">
             <i data-lucide="shield-check" class="text-green-500"></i>
             <h1 class="text-xl font-bold text-white">Fresh-Mart Support</h1>
         </div>
-        <nav class="flex-1 py-4">
-            <nav class="flex-1 py-4 overflow-y-auto">
+        <nav class="flex-1 py-4 overflow-y-auto" id="sidebar-nav">
             <div class="px-6 py-2 text-xs font-bold text-gray-500 uppercase tracking-widest">Introduction</div>
             <a href="index.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="home" class="w-4 h-4"></i> Welcome</div>
@@ -42,13 +66,14 @@
             <a href="ranks.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="users" class="w-4 h-4"></i> Group Ranks</div>
             </a>
-            <a href="rules.html" class="sidebar-item active-link block px-8 py-2.5 text-sm font-medium>
+            <a href="rules.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="gavel" class="w-4 h-4"></i> Staff Rules</div>
             </a>
             <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">MR Info</div>
             <a href="training.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="book-open" class="w-4 h-4"></i> Training Guide</div>
             </a>
+
             <div class="px-6 py-2 mt-6 text-xs font-bold text-gray-500 uppercase tracking-widest">HR Info</div>
             <a href="general.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="info" class="w-4 h-4"></i> General Information</div>
@@ -59,7 +84,6 @@
             <a href="punishments.html" class="sidebar-item block px-8 py-2.5 text-sm font-medium">
                 <div class="flex items-center gap-3"><i data-lucide="alert-circle" class="w-4 h-4"></i> Punishment Information</div>
             </a>
-        </nav>
         </nav>
     </aside>
 

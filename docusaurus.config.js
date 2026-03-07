@@ -1,51 +1,50 @@
 // @ts-check
-const {themes} = require('prism-react-renderer');
+// `@type` JSDoc annotations allow editor autocompletion and type checking
+// (when paired with `@ts-check`).
+// There are various equivalent ways to declare your Docusaurus config.
+// See: https://docusaurus.io/docs/api/docusaurus-config
+
+import { themes as prismThemes } from "prism-react-renderer";
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Fresh-Mart Support',
-  tagline: 'Official Staff Documentation',
-  favicon: 'img/favicon.ico',
+  title: "Fresh-Mart Support",
+  tagline: "Our Freshness, Your Smile.",
+  favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: 'https://cookiedev7457.github.io',
-  // The name of your GitHub project
-  baseUrl: '/support-Fresh-Mart.co.uk/',
+  url: "https://support.fresh-mart.co.uk",
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: "/",
 
   // GitHub pages deployment config.
-  organizationName: 'cookiedev7457', 
-  projectName: 'support-Fresh-Mart.co.uk', 
-  deploymentBranch: 'gh-pages',
-  trailingSlash: false,
+  // If you aren't using GitHub pages, you don't need these.
+  organizationName: "Fresh-Mart", // Usually your GitHub org/user name.
+  projectName: "Fresh-Mart | Staff Support", // Usually your repo name.
 
-  onBrokenLinks: 'throw',
-  
-  markdown: {
-    format: 'md', // Ensures standard markdown is used
-    mermaid: true,
-  },
+  onBrokenLinks: "throw",
+  onBrokenMarkdownLinks: "warn",
 
-  // Fixed the deprecation warning by moving it into the correct place for v3+
-  onBrokenMarkdownLinks: 'warn',
-
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: "en",
+    locales: ["en"],
   },
 
   presets: [
     [
-      'classic',
+      "classic",
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: './sidebars.js',
-          // Points to your main branch for the "Edit this page" link
-          editUrl: 'https://github.com/cookiedev7457/support-Fresh-Mart.co.uk/tree/main/',
+            routeBasePath: "/",
+            sidebarPath: require.resolve("./sidebars.js"),
         },
-        blog: false, // Disabled to focus on the portal
         theme: {
-          customCss: './src/css/custom.css',
+          customCss: "./src/css/custom.css",
         },
       }),
     ],
@@ -54,46 +53,61 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      image: 'img/docusaurus-social-card.jpg',
+      colorMode: {
+        defaultMode: "dark",
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
+      },
       navbar: {
-        title: 'Fresh-Mart',
-        logo: {
-          alt: 'Fresh-Mart Logo',
-          src: 'img/logo.svg',
-        },
-        items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'portalSidebar', // THIS MUST MATCH sidebars.js
-            position: 'left',
-            label: 'Staff Portal',
-          },
-        ],
+        title: "BloxStreet Support",
+        items: [],
       },
       footer: {
-        style: 'dark',
+        style: "dark",
         links: [
           {
-            title: 'Quick Links',
+            title: "Support",
             items: [
               {
-                label: 'Staff Promotions',
-                to: '/docs/lr-info/staff-promotions',
+                label: "Home",
+                to: "/",
+              },
+            ],
+          },
+          {
+            title: "Community Links",
+            items: [
+              {
+                label: "Roblox Group",
+                href: "https://www.roblox.com/communities/34992659/Fresh-Mart#!/about",
               },
               {
-                label: 'Training Guide',
-                to: '/docs/mr-info/training-guide',
+                label: "Discord",
+                href: "https://discord.gg/FvKHPPgVXu",
+              },
+            ],
+          },
+          {
+            title: "GitHub Infomation",
+            items: [
+              {
+                label: "Organization",
+                href: "https://github.com/cookiedev7457?tab=repositories",
+              },
+              {
+                label: "Support Repository",
+                href: "https://github.com/cookiedev7457/Support.Fresh-Mart",
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Fresh-Mart Portal.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Fresh-Mart. Built with Docusaurus.`,
       },
       prism: {
-        theme: themes.github,
-        darkTheme: themes.dracula,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
     }),
 };
 
-module.exports = config;
+export default config;

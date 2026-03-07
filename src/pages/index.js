@@ -10,9 +10,9 @@ export default function Home() {
         <p>Official documentation and protocols for all staff members.</p>
 
         <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '40px' }}>
-         <Link className="button button--secondary button--lg" to="/docs/lr-info/staff-promotions">LR Info</Link>
-         <Link className="button button--secondary button--lg" to="/docs/mr-info/training-guide">MR Info</Link>
-         <Link className="button button--secondary button--lg" to="/docs/hr-info/punishment-guide">HR Info</Link>
+          <Link className="button button--secondary button--lg" to="/docs/lr-info/staff-promotions">LR Info</Link>
+          <Link className="button button--secondary button--lg" to="/docs/mr-info/training-guide">MR Info</Link>
+          <Link className="button button--secondary button--lg" to="/docs/hr-info/punishment-guide">HR Info</Link> 
         </div>
       </main>
     </Layout>

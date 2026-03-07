@@ -56,11 +56,18 @@ const config = {
       colorMode: {
         defaultMode: "dark",
         disableSwitch: false,
-        respectPrefersColorScheme: false,
+        respectPrefersColorScheme: true,
       },
       navbar: {
         title: "Fresh-Mart Support",
-        items: [],
+        items: [
+          {
+          type: 'docSidebar',
+          sidebarId: 'portalSidebar', // This must match the name in your sidebars.js
+          position: 'left',
+          label: 'Staff Portal',
+          }
+      ],
       },
       footer: {
         style: "dark",

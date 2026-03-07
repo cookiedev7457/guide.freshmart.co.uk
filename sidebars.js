@@ -1,3 +1,4 @@
+/** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   portalSidebar: [
     {
@@ -17,3 +18,5 @@ const sidebars = {
     },
   ],
 };
+
+module.exports = sidebars;

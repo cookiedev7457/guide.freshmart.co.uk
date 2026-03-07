@@ -1,42 +1,19 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import React from 'react';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-
-import Heading from '@theme/Heading';
-import styles from './index.module.css';
-
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
+import Link from '@docusaurus/Link';
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
-      <main>
-        <HomepageFeatures />
+    <Layout title="Staff Portal">
+      <main style={{ padding: '50px', textAlign: 'center', background: '#121212', color: 'white', minHeight: '100vh' }}>
+        <h1 style={{ color: '#10b981', fontSize: '3rem' }}>Fresh-Mart Staff Portal</h1>
+        <p>Official documentation and protocols for all staff members.</p>
+        
+        <div style={{ display: 'flex', justifyContent: 'center', gap: '20px', marginTop: '40px' }}>
+          <Link className="button button--secondary button--lg" to="/docs/lr-info/staff-promotions">LR Info</Link>
+          <Link className="button button--secondary button--lg" to="/docs/mr-info/training-guide">MR Info</Link>
+          <Link className="button button--secondary button--lg" to="/docs/hr-info/punishment-guide">HR Info</Link>
+        </div>
       </main>
     </Layout>
   );

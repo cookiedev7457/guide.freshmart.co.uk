@@ -13,17 +13,17 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://support.fresh-mart.co.uk",
+  url: "https://cookiedev7457.github.io",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: "/",
+  baseUrl: "/Support.Fresh-Mart.co.uk/",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Fresh-Mart", // Usually your GitHub org/user name.
-  projectName: "Fresh-Mart | Staff Support", // Usually your repo name.
+  organizationName: "cookiedev7457", // Usually your GitHub org/user name.
+  projectName: "Support.Fresh-Mart", // Usually your repo name.
 
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
 
   // Even if you don't use internationalization, you can use this field to set
@@ -59,7 +59,7 @@ const config = {
         respectPrefersColorScheme: false,
       },
       navbar: {
-        title: "BloxStreet Support",
+        title: "Fresh-Mart Support",
         items: [],
       },
       footer: {
